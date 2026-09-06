@@ -19,6 +19,7 @@ social-network-links:
 feed_show_tags: false   # home page shows heading + summary only
 feed_show_excerpt: false
 
+date_format: "%b %-d, %Y"   # -> Sep 6, 2025
 timezone: "Europe/Berlin"
 markdown: kramdown
 highlighter: rouge
