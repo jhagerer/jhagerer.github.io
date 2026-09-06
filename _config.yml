@@ -16,7 +16,8 @@ social-network-links:
   github: jhagerer
   rss: true
 
-feed_show_tags: true
+feed_show_tags: false   # home page shows heading + summary only
+feed_show_excerpt: false
 
 timezone: "Europe/Berlin"
 markdown: kramdown
@@ -47,6 +48,7 @@ footer-hover-col: "var(--bj-footer-hover)"
 # Light/dark palettes, the toggle button, and the pre-paint theme script.
 site-css:
   - "/assets/css/theme-toggle.css"
+  - "/assets/css/typography.css"
 site-js:
   - "/assets/js/theme-toggle.js"
 
