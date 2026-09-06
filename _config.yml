@@ -8,7 +8,7 @@ remote_theme: daattali/beautiful-jekyll@6.0.1
 navbar-links:
   Topics:
     - Papers I Am Reading: "tags#papers"
-    - Student Announcements: "tags#student-info"
+    - Student Advice: "tags#student-advice"
     - NLP &amp; Data Concepts: "tags#nlp-and-data-concepts"
   Tags: "tags"
 
