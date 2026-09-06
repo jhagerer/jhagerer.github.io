@@ -23,16 +23,43 @@ paginate: 5
 kramdown:
   input: GFM
 
+# --- Colours -------------------------------------------------------------
+# These are injected verbatim into the theme's own stylesheet, so pointing
+# them at CSS custom properties makes the whole theme palette swappable at
+# runtime without overriding any theme file. Values live in
+# assets/css/theme-toggle.css.
+navbar-col: "var(--bj-navbar)"
+navbar-text-col: "var(--bj-navbar-text)"
+navbar-border-col: "var(--bj-navbar-border)"
+page-col: "var(--bj-page)"
+text-col: "var(--bj-text)"
+link-col: "var(--bj-link)"
+hover-col: "var(--bj-hover)"
+footer-col: "var(--bj-footer)"
+footer-text-col: "var(--bj-footer-text)"
+footer-link-col: "var(--bj-footer-link)"
+footer-hover-col: "var(--bj-footer-hover)"
+
+# Light/dark palettes, the toggle button, and the pre-paint theme script.
+site-css:
+  - "/assets/css/theme-toggle.css"
+site-js:
+  - "/assets/js/theme-toggle.js"
+
 defaults:
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+      head-extra:
+        - head-theme-init.html
   - scope:
       path: ""
     values:
       layout: "page"
+      head-extra:
+        - head-theme-init.html
 
 plugins:
   - jekyll-remote-theme

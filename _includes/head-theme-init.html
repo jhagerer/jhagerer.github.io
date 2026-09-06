@@ -1,0 +1,16 @@
+{%- comment -%}
+  Runs before the page paints so a reader who chose light or dark never sees a
+  flash of the other one. Kept inline and tiny for that reason.
+{%- endcomment -%}
+<script>
+  (function () {
+    try {
+      var saved = window.localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    } catch (e) {
+      /* Private mode or blocked storage: fall back to the OS preference. */
+    }
+  })();
+</script>

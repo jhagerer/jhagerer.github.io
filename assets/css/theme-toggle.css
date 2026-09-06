@@ -1,0 +1,273 @@
+/* Light and dark palettes for beautiful-jekyll.
+ *
+ * The theme's own stylesheet reads its colours from _config.yml, which points
+ * every colour key at one of the --bj-* properties below. Redefining those
+ * properties therefore recolours the whole theme; no theme file is overridden.
+ *
+ * Three states, in precedence order:
+ *   1. no data-theme attribute  -> follow the operating system
+ *   2. data-theme="light"       -> forced light, even on a dark OS
+ *   3. data-theme="dark"        -> forced dark, even on a light OS
+ */
+
+:root {
+  /* Palette values are defined once here and mapped below. */
+  --light-navbar: #EAEAEA;
+  --light-navbar-text: #404040;
+  --light-navbar-border: #DDDDDD;
+  --light-page: #FFFFFF;
+  --light-text: #404040;
+  --light-link: #0072D6;
+  --light-hover: #0085A1;
+  --light-footer: #EAEAEA;
+  --light-footer-text: #6B6B6B;
+  --light-footer-link: #404040;
+  --light-footer-hover: #0085A1;
+  --light-rule: #E4E4E4;
+  --light-code-bg: #F5F6F8;
+  --light-code-fg: #C7254E;
+  --light-elevated: #FFFFFF;
+  --light-stripe: #F8F8F8;
+  --light-box-note: #EEEEEE;
+  --light-box-warning: #FDF5D4;
+
+  --dark-navbar: #1E2128;
+  --dark-navbar-text: #D6D9DE;
+  --dark-navbar-border: #2E333D;
+  --dark-page: #16181D;
+  --dark-text: #D6D9DE;
+  --dark-link: #6BB6FF;
+  --dark-hover: #9AD0F0;
+  --dark-footer: #1E2128;
+  --dark-footer-text: #9BA1AC;
+  --dark-footer-link: #D6D9DE;
+  --dark-footer-hover: #9AD0F0;
+  --dark-rule: #2E333D;
+  --dark-code-bg: #1E2128;
+  --dark-code-fg: #F0A5B8;
+  --dark-elevated: #1E2128;
+  --dark-stripe: #232833;
+  --dark-box-note: #232833;
+  --dark-box-warning: #3A3320;
+
+  /* Active mapping: light by default. */
+  --bj-navbar: var(--light-navbar);
+  --bj-navbar-text: var(--light-navbar-text);
+  --bj-navbar-border: var(--light-navbar-border);
+  --bj-page: var(--light-page);
+  --bj-text: var(--light-text);
+  --bj-link: var(--light-link);
+  --bj-hover: var(--light-hover);
+  --bj-footer: var(--light-footer);
+  --bj-footer-text: var(--light-footer-text);
+  --bj-footer-link: var(--light-footer-link);
+  --bj-footer-hover: var(--light-footer-hover);
+  --bj-rule: var(--light-rule);
+  --bj-code-bg: var(--light-code-bg);
+  --bj-code-fg: var(--light-code-fg);
+  --bj-elevated: var(--light-elevated);
+  --bj-stripe: var(--light-stripe);
+  --bj-box-note: var(--light-box-note);
+  --bj-box-warning: var(--light-box-warning);
+
+  color-scheme: light;
+}
+
+/* 1. Follow the OS, unless the reader has explicitly chosen light. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bj-navbar: var(--dark-navbar);
+    --bj-navbar-text: var(--dark-navbar-text);
+    --bj-navbar-border: var(--dark-navbar-border);
+    --bj-page: var(--dark-page);
+    --bj-text: var(--dark-text);
+    --bj-link: var(--dark-link);
+    --bj-hover: var(--dark-hover);
+    --bj-footer: var(--dark-footer);
+    --bj-footer-text: var(--dark-footer-text);
+    --bj-footer-link: var(--dark-footer-link);
+    --bj-footer-hover: var(--dark-footer-hover);
+    --bj-rule: var(--dark-rule);
+    --bj-code-bg: var(--dark-code-bg);
+    --bj-code-fg: var(--dark-code-fg);
+    --bj-elevated: var(--dark-elevated);
+    --bj-stripe: var(--dark-stripe);
+    --bj-box-note: var(--dark-box-note);
+    --bj-box-warning: var(--dark-box-warning);
+
+    color-scheme: dark;
+  }
+}
+
+/* 2. Forced dark, whatever the OS says. */
+:root[data-theme="dark"] {
+  --bj-navbar: var(--dark-navbar);
+  --bj-navbar-text: var(--dark-navbar-text);
+  --bj-navbar-border: var(--dark-navbar-border);
+  --bj-page: var(--dark-page);
+  --bj-text: var(--dark-text);
+  --bj-link: var(--dark-link);
+  --bj-hover: var(--dark-hover);
+  --bj-footer: var(--dark-footer);
+  --bj-footer-text: var(--dark-footer-text);
+  --bj-footer-link: var(--dark-footer-link);
+  --bj-footer-hover: var(--dark-footer-hover);
+  --bj-rule: var(--dark-rule);
+  --bj-code-bg: var(--dark-code-bg);
+  --bj-code-fg: var(--dark-code-fg);
+  --bj-elevated: var(--dark-elevated);
+  --bj-stripe: var(--dark-stripe);
+  --bj-box-note: var(--dark-box-note);
+  --bj-box-warning: var(--dark-box-warning);
+
+  color-scheme: dark;
+}
+
+/* --- Elements the theme hardcodes, so they are not covered by the keys --- */
+
+body { background-color: var(--bj-page); }
+
+hr,
+hr.small,
+blockquote,
+.post-preview,
+.post-preview:last-child,
+footer {
+  border-color: var(--bj-rule);
+}
+
+/* The footer's top border is a literal in the theme, not a config key. */
+footer { border-top-color: var(--bj-rule); }
+
+blockquote { border-left-color: var(--bj-rule); }
+
+pre,
+.highlight,
+.highlighter-rouge .highlight {
+  background-color: var(--bj-code-bg);
+  color: var(--bj-text);
+}
+
+/* Inline code only: `pre > code` must keep the highlighter's own colours. */
+:not(pre) > code {
+  background-color: var(--bj-code-bg);
+  color: var(--bj-code-fg);
+}
+
+/* Surfaces the theme hardcodes light. These read the same variables, so one
+ * rule each covers both light and dark. */
+.pagination .page-item .page-link,
+table tr,
+.header-section.has-img .no-img {
+  background-color: var(--bj-elevated);
+}
+
+.pagination .page-item .page-link {
+  color: var(--bj-link);
+  border-color: var(--bj-rule);
+}
+
+table tr:nth-child(2n) { background-color: var(--bj-stripe); }
+table, table tr, table th, table td { border-color: var(--bj-rule); }
+
+.box-success { border-color: var(--bj-rule); }
+.box-note { background-color: var(--bj-box-note); }
+.box-warning { background-color: var(--bj-box-warning); }
+
+/* Bootstrap draws the mobile hamburger as a dark SVG; invert it on dark. */
+:root[data-theme="dark"] .navbar-toggler-icon,
+:root[data-theme="dark"] .navbar-custom .navbar-toggler-icon {
+  filter: invert(1) opacity(0.85);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .navbar-toggler-icon,
+  :root:not([data-theme="light"]) .navbar-custom .navbar-toggler-icon {
+    filter: invert(1) opacity(0.85);
+  }
+}
+
+/* --- Syntax highlighting on dark ---------------------------------------- */
+/* pygment_highlights.css is written for a light background; retint the
+ * common token classes so code stays readable. */
+:root[data-theme="dark"] .highlight,
+:root[data-theme="dark"] .highlight pre { color: #D6D9DE; }
+:root[data-theme="dark"] .highlight .c,
+:root[data-theme="dark"] .highlight .c1,
+:root[data-theme="dark"] .highlight .cm,
+:root[data-theme="dark"] .highlight .cs { color: #8B93A1; font-style: italic; }
+:root[data-theme="dark"] .highlight .k,
+:root[data-theme="dark"] .highlight .kd,
+:root[data-theme="dark"] .highlight .kn,
+:root[data-theme="dark"] .highlight .kr,
+:root[data-theme="dark"] .highlight .kt { color: #C6A0F6; }
+:root[data-theme="dark"] .highlight .s,
+:root[data-theme="dark"] .highlight .s1,
+:root[data-theme="dark"] .highlight .s2,
+:root[data-theme="dark"] .highlight .sb,
+:root[data-theme="dark"] .highlight .sd { color: #A6DA95; }
+:root[data-theme="dark"] .highlight .m,
+:root[data-theme="dark"] .highlight .mi,
+:root[data-theme="dark"] .highlight .mf { color: #F5A97F; }
+:root[data-theme="dark"] .highlight .nf,
+:root[data-theme="dark"] .highlight .nc,
+:root[data-theme="dark"] .highlight .nn { color: #8AADF4; }
+:root[data-theme="dark"] .highlight .nb,
+:root[data-theme="dark"] .highlight .o,
+:root[data-theme="dark"] .highlight .p { color: #B8C0CC; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .highlight,
+  :root:not([data-theme="light"]) .highlight pre { color: #D6D9DE; }
+  :root:not([data-theme="light"]) .highlight .c,
+  :root:not([data-theme="light"]) .highlight .c1,
+  :root:not([data-theme="light"]) .highlight .cm,
+  :root:not([data-theme="light"]) .highlight .cs { color: #8B93A1; font-style: italic; }
+  :root:not([data-theme="light"]) .highlight .k,
+  :root:not([data-theme="light"]) .highlight .kd,
+  :root:not([data-theme="light"]) .highlight .kn,
+  :root:not([data-theme="light"]) .highlight .kr,
+  :root:not([data-theme="light"]) .highlight .kt { color: #C6A0F6; }
+  :root:not([data-theme="light"]) .highlight .s,
+  :root:not([data-theme="light"]) .highlight .s1,
+  :root:not([data-theme="light"]) .highlight .s2,
+  :root:not([data-theme="light"]) .highlight .sb,
+  :root:not([data-theme="light"]) .highlight .sd { color: #A6DA95; }
+  :root:not([data-theme="light"]) .highlight .m,
+  :root:not([data-theme="light"]) .highlight .mi,
+  :root:not([data-theme="light"]) .highlight .mf { color: #F5A97F; }
+  :root:not([data-theme="light"]) .highlight .nf,
+  :root:not([data-theme="light"]) .highlight .nc,
+  :root:not([data-theme="light"]) .highlight .nn { color: #8AADF4; }
+  :root:not([data-theme="light"]) .highlight .nb,
+  :root:not([data-theme="light"]) .highlight .o,
+  :root:not([data-theme="light"]) .highlight .p { color: #B8C0CC; }
+}
+
+/* --- The toggle button --------------------------------------------------- */
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--bj-navbar-border);
+  border-radius: 0.25rem;
+  color: var(--bj-navbar-text);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.4rem 0.6rem;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  color: var(--bj-hover);
+  border-color: var(--bj-hover);
+}
+
+.nav-item.theme-toggle-item {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 1199px) {
+  .nav-item.theme-toggle-item { margin: 0.5rem 0; }
+}
