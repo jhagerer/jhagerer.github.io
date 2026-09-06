@@ -125,7 +125,28 @@
 
 /* --- Elements the theme hardcodes, so they are not covered by the keys --- */
 
-body { background-color: var(--bj-page); }
+/* Paint every layer explicitly rather than relying on the browser
+ * propagating body's background to the canvas. Without the html rule the
+ * area below a short page (and the overscroll region) keeps the browser's
+ * default white. `html body` outranks any single-element rule from
+ * Bootstrap's reboot, which also sets a white body background. */
+html {
+  background-color: var(--bj-page);
+  min-height: 100%;
+}
+
+html body { background-color: var(--bj-page); }
+
+/* The theme's content wrappers are transparent, so they normally show the
+ * body through. Painting them too means no layer between html and the text
+ * can stay light, whatever a given browser does with propagation. */
+.header-section,
+.intro-header,
+[role="main"],
+body > .container-md,
+body > .container-fluid {
+  background-color: var(--bj-page);
+}
 
 hr,
 hr.small,
