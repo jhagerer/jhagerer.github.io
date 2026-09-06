@@ -1,6 +1,6 @@
 ---
 title: "LLM Coding Concepts: Static Typing, Structured Output, and asyncio"
-subtitle: "Python patterns that carry a professional LLM codebase"
+subtitle: "Coding concepts you need for writing LLM workflow automations in Python."
 date: 2026-09-06 16:00:00 +0200
 tags: [nlp-and-data-concepts]
 ---

@@ -26,7 +26,36 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-p { margin: 0 0 1.6rem; }
+/* One vertical rhythm for every block, so the gap is the same whichever two
+ * blocks meet. Each block carries its space below and none above; adjacent
+ * margins then collapse to exactly one --block-space.
+ *
+ * A fenced code block is not a bare <pre>: kramdown wraps it as
+ * div.highlighter-rouge > div.highlight > pre.highlight, so the spacing has to
+ * sit on that outer wrapper. The theme zeroes the inner pre, and the rules
+ * below keep it zeroed, otherwise the block would carry two gaps. */
+:root { --block-space: 1.6rem; }
+
+p,
+ul, ol, dl,
+blockquote,
+table,
+figure,
+pre,
+.highlighter-rouge {
+  margin-top: 0;
+  margin-bottom: var(--block-space);
+}
+
+.highlighter-rouge .highlight,
+.highlighter-rouge pre,
+.highlight pre {
+  margin: 0;
+}
+
+/* Nested lists and list paragraphs sit tighter than top-level blocks. */
+li > ul, li > ol { margin-top: 0.4rem; margin-bottom: 0.4rem; }
+li > p:last-child { margin-bottom: 0; }
 
 /* A comfortable measure. The theme centres the column with a Bootstrap
  * offset, which is replaced here by auto margins so the narrower column
