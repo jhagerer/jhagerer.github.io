@@ -40,8 +40,7 @@ collect the better the grade, obviously. In order to achieve many checkmarks
 - ✅/❌ The amount of tables and figures do not hurt the readability of the actual text in the report.
 - ✅/❌ Unnecessary tables and figures are moved to the appendix part behind the actual report and references. Tables and figures are unnecessary when they are redundant at least to some degree.
 - ✅/❌ The spelling and grammatical errors are kept within reasonable limits.
-- ✅/❌ There are no sloppy AI formulations. Where an AI assistant was used to write or edit, the text has been revised afterwards so that it reads as your own writing.
-  - [Humanizer](https://github.com/blader/humanizer) catalogues 25 such patterns, among them "not X but Y" constructions, forced triads, the em-dash as an all-purpose connector, bold used as decoration, inflated significance, and leftover chatbot phrases.
+- ✅/❌ There are no sloppy AI formulations, see [Humanizer](https://github.com/blader/humanizer).
 - ✅/❌ Capitalization rules are applied correctly on normal text, i.e. only proper nouns are capitalized and technical terms are not capitalized.
 - ✅/❌ Capitalization rules are applied correctly on titles, i.e., section and subsection headings, in accordance with the [Title Capitalization Tool](https://capitalizemytitle.com/).
 

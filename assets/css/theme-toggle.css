@@ -30,6 +30,8 @@
   --light-stripe: #F8F8F8;
   --light-box-note: #EEEEEE;
   --light-box-warning: #FDF5D4;
+  --light-selection-bg: #B9DCFF;
+  --light-selection-fg: #10131A;
 
   --dark-navbar: #1E2128;
   --dark-navbar-text: #D6D9DE;
@@ -49,6 +51,8 @@
   --dark-stripe: #232833;
   --dark-box-note: #232833;
   --dark-box-warning: #3A3320;
+  --dark-selection-bg: #2F5680;
+  --dark-selection-fg: #F2F5F9;
 
   /* Active mapping: light by default. */
   --bj-navbar: var(--light-navbar);
@@ -69,6 +73,8 @@
   --bj-stripe: var(--light-stripe);
   --bj-box-note: var(--light-box-note);
   --bj-box-warning: var(--light-box-warning);
+  --bj-selection-bg: var(--light-selection-bg);
+  --bj-selection-fg: var(--light-selection-fg);
 
   color-scheme: light;
 }
@@ -94,6 +100,8 @@
     --bj-stripe: var(--dark-stripe);
     --bj-box-note: var(--dark-box-note);
     --bj-box-warning: var(--dark-box-warning);
+    --bj-selection-bg: var(--dark-selection-bg);
+    --bj-selection-fg: var(--dark-selection-fg);
 
     color-scheme: dark;
   }
@@ -119,6 +127,8 @@
   --bj-stripe: var(--dark-stripe);
   --bj-box-note: var(--dark-box-note);
   --bj-box-warning: var(--dark-box-warning);
+  --bj-selection-bg: var(--dark-selection-bg);
+  --bj-selection-fg: var(--dark-selection-fg);
 
   color-scheme: dark;
 }
@@ -194,6 +204,25 @@ table, table tr, table th, table td { border-color: var(--bj-rule); }
 .box-success { border-color: var(--bj-rule); }
 .box-note { background-color: var(--bj-box-note); }
 .box-warning { background-color: var(--bj-box-warning); }
+
+/* Selected text.
+ *
+ * The theme styles ::selection as hardcoded white text on hover-col. In dark
+ * mode hover-col is a light blue, so white on light blue is unreadable; in
+ * light mode it is a mid teal, which is washed out. Selection gets its own
+ * pair of colours instead of borrowing the link hover colour.
+ *
+ * ::selection and ::-moz-selection must stay in separate rules: a browser
+ * that does not know one of them would otherwise drop the whole rule. */
+::selection {
+  background-color: var(--bj-selection-bg);
+  color: var(--bj-selection-fg);
+}
+
+::-moz-selection {
+  background-color: var(--bj-selection-bg);
+  color: var(--bj-selection-fg);
+}
 
 /* Bootstrap draws the mobile hamburger as a dark SVG; invert it on dark. */
 :root[data-theme="dark"] .navbar-toggler-icon,
