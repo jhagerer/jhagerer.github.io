@@ -1,6 +1,40 @@
 title: Johann Hagerer
 description: Sharing concepts and papers about natural language processing, legal reasoning, and data engineering for students and professionals.
-theme: minima
-
+author: Johann
 url: "https://jhagerer.github.io"
-baseurl: ""
+
+remote_theme: daattali/beautiful-jekyll@6.0.1
+
+navbar-links:
+  Tags: "tags"
+
+social-network-links:
+  github: jhagerer
+  rss: true
+
+feed_show_tags: true
+
+timezone: "Europe/Berlin"
+markdown: kramdown
+highlighter: rouge
+permalink: /:year-:month-:day-:title/
+paginate: 5
+
+kramdown:
+  input: GFM
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-paginate
+  - jekyll-sitemap
