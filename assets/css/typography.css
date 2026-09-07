@@ -17,9 +17,16 @@
 
 /* --- Reading text -------------------------------------------------------- */
 
+/* Stop iOS and Android inflating text on their own; the sizes below already
+ * account for small screens. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   line-height: 1.58;
   letter-spacing: -0.003em;
   -webkit-font-smoothing: antialiased;
@@ -90,12 +97,13 @@ h2, h3, h4, h5, h6 {
   line-height: 1.25;
 }
 
-h2 { font-size: 1.6rem; margin: 2.6rem 0 0.9rem; }
-h3 { font-size: 1.3rem; margin: 2.1rem 0 0.7rem; }
+h2 { font-size: 1.4rem; margin: 2.2rem 0 0.8rem; }
+h3 { font-size: 1.15rem; margin: 1.8rem 0 0.6rem; }
 
 .intro-header .page-heading .page-subheading,
 .intro-header .post-heading .post-subheading {
   font-family: var(--font-sans);
+  font-size: 1.25rem;   /* the theme holds this at 1.6875rem on every screen */
   font-weight: 400;
   font-style: normal;
   letter-spacing: -0.003em;
@@ -202,8 +210,8 @@ input, textarea, select {
 .post-preview .post-title {
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 1.9rem;
-  line-height: 1.22;
+  font-size: 1.55rem;
+  line-height: 1.24;
   letter-spacing: -0.022em;
   margin-bottom: 0.5rem;
 }
@@ -211,9 +219,31 @@ input, textarea, select {
 .post-preview .post-subtitle {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   line-height: 1.45;
   letter-spacing: normal;
   margin: 0;
   opacity: 0.72;
+}
+
+
+/* --- Larger screens -------------------------------------------------------
+ *
+ * The sizes above are the small-screen ones. A phone column is roughly half
+ * the width of the desktop reading column, so type held at one size fills far
+ * more of a phone's screen and reads as bigger there. These steps restore the
+ * desktop scale once there is width for it, following the theme's own
+ * mobile-first breakpoints. Placed last so they override the base rules. */
+
+@media (min-width: 768px) {
+  body { font-size: 1.25rem; }
+
+  h2 { font-size: 1.6rem; margin: 2.6rem 0 0.9rem; }
+  h3 { font-size: 1.3rem; margin: 2.1rem 0 0.7rem; }
+
+  .post-preview .post-title { font-size: 1.9rem; line-height: 1.22; }
+  .post-preview .post-subtitle { font-size: 1.05rem; }
+
+  .intro-header .page-heading .page-subheading,
+  .intro-header .post-heading .post-subheading { font-size: 1.6875rem; }
 }
