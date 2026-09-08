@@ -10,6 +10,7 @@ navbar-extra:
 
 # Rendered as the tab row under the site name.
 topic-tabs:
+  - All articles: "/"
   - Concepts: "/concepts/"
   - Papers: "/papers/"
   - Student Info: "/student-info/"
