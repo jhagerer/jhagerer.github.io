@@ -10,15 +10,15 @@ navbar-extra:
 
 # Rendered as the tab row under the site name.
 topic-tabs:
-  - Concepts: "tags#nlp-and-data-concepts"
-  - Papers: "tags#papers"
-  - Student Info: "tags#student-advice"
+  - Concepts: "/concepts/"
+  - Papers: "/papers/"
+  - Student Info: "/student-info/"
 
 navbar-links:
   Topics:
-    - Papers I Am Reading: "tags#papers"
-    - Student Advice: "tags#student-advice"
-    - NLP &amp; Data Concepts: "tags#nlp-and-data-concepts"
+    - Papers I Am Reading: "/papers/"
+    - Student Advice: "/student-info/"
+    - NLP &amp; Data Concepts: "/concepts/"
   Tags: "tags"
 
 social-network-links:

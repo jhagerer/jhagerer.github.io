@@ -1,0 +1,30 @@
+---
+layout: page
+---
+
+{%- comment -%}
+  Lists the posts of a single tag, named in the page's `tag` front matter.
+  Mirrors the home listing's markup so it picks up the same styling.
+{%- endcomment -%}
+
+{%- assign posts = site.tags[page.tag] -%}
+
+{%- if posts and posts.size > 0 -%}
+<ul class="posts-list list-unstyled" role="list">
+  {%- for post in posts %}
+  <li class="post-preview">
+    <article>
+      <a href="{{ post.url | absolute_url }}">
+        <h2 class="post-title">{{ post.title | strip_html }}</h2>
+        {%- if post.subtitle %}
+        <h3 class="post-subtitle">{{ post.subtitle | strip_html }}</h3>
+        {%- endif %}
+      </a>
+      <p class="post-meta">{{ post.date | date: site.date_format }}</p>
+    </article>
+  </li>
+  {%- endfor %}
+</ul>
+{%- else -%}
+<p>Nothing here yet.</p>
+{%- endif -%}

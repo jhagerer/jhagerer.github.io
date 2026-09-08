@@ -252,6 +252,29 @@ input, textarea, select {
   text-decoration: none;
 }
 
+/* The tab whose page is open. */
+.topic-tab-current {
+  opacity: 1;
+  font-weight: 500;
+  border-bottom-color: var(--bj-navbar-text);
+}
+
+/* Anchor links into the tag index (the tag chips under each post) land beneath
+ * the fixed header: the theme offsets them by 3.75rem, which was already tight
+ * against the original navbar and is well short of it now that the tab row is
+ * there. Offsetting by the real header height puts the heading in view. */
+:root { --nav-h: 106px; }
+
+@media (min-width: 1200px) {
+  :root { --nav-h: 146px; }
+}
+
+.linked-section {
+  padding-top: 0;
+  margin-top: 2.6rem;
+  scroll-margin-top: calc(var(--nav-h) + 1rem);
+}
+
 /* --- Home listing -------------------------------------------------------- */
 
 /* Heading, summary and date. The excerpt and the tag row are switched off in
