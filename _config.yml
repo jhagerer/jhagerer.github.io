@@ -5,6 +5,15 @@ url: "https://jhagerer.github.io"
 
 remote_theme: daattali/beautiful-jekyll@6.0.1
 
+navbar-extra:
+  - topic-tabs.html
+
+# Rendered as the tab row under the site name.
+topic-tabs:
+  - Concepts: "tags#nlp-and-data-concepts"
+  - Papers: "tags#papers"
+  - Student Info: "tags#student-advice"
+
 navbar-links:
   Topics:
     - Papers I Am Reading: "tags#papers"

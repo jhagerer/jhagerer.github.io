@@ -12,9 +12,9 @@
 
 :root {
   /* Palette values are defined once here and mapped below. */
-  --light-navbar: #EAEAEA;
+  --light-navbar: #FFFFFF;
   --light-navbar-text: #404040;
-  --light-navbar-border: #DDDDDD;
+  --light-navbar-border: #E4E4E4;
   --light-page: #FFFFFF;
   --light-text: #242424;
   --light-link: #0072D6;

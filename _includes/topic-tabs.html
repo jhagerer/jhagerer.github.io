@@ -1,0 +1,14 @@
+{%- comment -%}
+  Topic tabs, rendered inside the navbar through site.navbar-extra. Kept in
+  the navbar rather than a layout so they appear on every page, including the
+  home page, whose header block the theme skips when a page has no title.
+{%- endcomment -%}
+<div class="topic-tabs">
+  <ul class="topic-tabs-list" role="list" aria-label="Topics">
+    {%- for tab in site.topic-tabs -%}
+      {%- for entry in tab -%}
+        <li><a class="topic-tab" href="{{ entry[1] | relative_url }}">{{ entry[0] }}</a></li>
+      {%- endfor -%}
+    {%- endfor -%}
+  </ul>
+</div>

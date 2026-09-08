@@ -13,6 +13,10 @@
   --font-serif: "Source Serif 4", Charter, Georgia, Cambria, "Times New Roman", serif;
   --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Height the topic tab row adds to the fixed navbar: the row itself plus
+   * its margin. Content below has to clear it. */
+  --tabs-h: 3.4375rem;
 }
 
 /* --- Reading text -------------------------------------------------------- */
@@ -190,6 +194,63 @@ input, textarea, select {
 
 ::placeholder { color: var(--bj-text); opacity: 0.55; }
 ::-webkit-input-placeholder { color: var(--bj-text); opacity: 0.55; }
+
+/* --- Topic tabs -----------------------------------------------------------
+ *
+ * A second row inside the navbar, under the site name. The navbar is a
+ * wrapping flex container, so a full-width item with a late order wraps onto
+ * its own line; that keeps the tabs part of the fixed header rather than a
+ * separate band that would scroll away from it. */
+
+/* navbar-expand-xl pins the navbar to flex-wrap: nowrap from 1200px up, which
+ * would keep this row inline with the site name instead of below it. */
+.navbar-custom { flex-wrap: wrap; }
+
+/* The theme clears the fixed navbar with a hardcoded margin on .intro-header,
+ * which knows nothing about this extra row. Padding adds the difference at
+ * every breakpoint without having to restate the theme's own margins. */
+.intro-header { padding-top: var(--tabs-h); }
+
+.topic-tabs {
+  order: 99;
+  width: 100%;
+  border-top: 1px solid var(--bj-navbar-border);
+  margin-top: 0.5rem;
+}
+
+.topic-tabs-list {
+  display: flex;
+  gap: 1.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;           /* narrow screens scroll rather than wrap */
+  scrollbar-width: none;
+}
+
+.topic-tabs-list::-webkit-scrollbar { display: none; }
+
+.topic-tab {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  white-space: nowrap;
+  color: var(--bj-navbar-text);
+  opacity: 0.6;
+  padding: 0.75rem 0 0.65rem;
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+}
+
+.topic-tab:hover,
+.topic-tab:focus-visible {
+  color: var(--bj-navbar-text);
+  opacity: 1;
+  border-bottom-color: var(--bj-navbar-text);
+  text-decoration: none;
+}
 
 /* --- Home listing -------------------------------------------------------- */
 
