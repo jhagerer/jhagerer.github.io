@@ -2,19 +2,29 @@
   Topic tabs, rendered inside the navbar through site.navbar-extra. Kept in
   the navbar rather than a layout so they appear on every page, including the
   home page, whose header block the theme skips when a page has no title.
+
+  The container/row/column classes repeat the ones page.html and post.html use
+  for the article column, so the tabs line up with the articles at every
+  breakpoint rather than at one guessed width.
 {%- endcomment -%}
 <div class="topic-tabs">
-  <ul class="topic-tabs-list" role="list" aria-label="Topics">
-    {%- for tab in site.topic-tabs -%}
-      {%- for entry in tab -%}
-        {%- assign is_current = false -%}
-        {%- if page.url == entry[1] %}{% assign is_current = true %}{%- endif -%}
-        <li>
-          <a class="topic-tab{% if is_current %} topic-tab-current{% endif %}"
-             href="{{ entry[1] | relative_url }}"
-             {% if is_current %}aria-current="page"{% endif %}>{{ entry[0] }}</a>
-        </li>
-      {%- endfor -%}
-    {%- endfor -%}
-  </ul>
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <ul class="topic-tabs-list" role="list" aria-label="Topics">
+          {%- for tab in site.topic-tabs -%}
+            {%- for entry in tab -%}
+              {%- assign is_current = false -%}
+              {%- if page.url == entry[1] %}{% assign is_current = true %}{%- endif -%}
+              <li>
+                <a class="topic-tab{% if is_current %} topic-tab-current{% endif %}"
+                   href="{{ entry[1] | relative_url }}"
+                   {% if is_current %}aria-current="page"{% endif %}>{{ entry[0] }}</a>
+              </li>
+            {%- endfor -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

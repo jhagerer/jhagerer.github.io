@@ -16,10 +16,6 @@ topic-tabs:
   - Student Info: "/student-info/"
 
 navbar-links:
-  Topics:
-    - Papers I Am Reading: "/papers/"
-    - Student Advice: "/student-info/"
-    - NLP &amp; Data Concepts: "/concepts/"
   Tags: "tags"
 
 social-network-links:

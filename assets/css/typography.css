@@ -204,7 +204,10 @@ input, textarea, select {
 
 /* navbar-expand-xl pins the navbar to flex-wrap: nowrap from 1200px up, which
  * would keep this row inline with the site name instead of below it. */
-.navbar-custom { flex-wrap: wrap; }
+.navbar-custom {
+  flex-wrap: wrap;
+  padding-bottom: 0;   /* lets the tab row reach the navbar's bottom border */
+}
 
 /* The theme clears the fixed navbar with a hardcoded margin on .intro-header,
  * which knows nothing about this extra row. Padding adds the difference at
@@ -213,10 +216,17 @@ input, textarea, select {
 
 .topic-tabs {
   order: 99;
-  width: 100%;
+  width: calc(100% + 2rem);
+  margin: 0.5rem -1rem 0;   /* cancels the navbar's side padding */
   border-top: 1px solid var(--bj-navbar-border);
-  margin-top: 0.5rem;
 }
+
+/* Bootstrap turns a container inside a navbar into a flex container. That
+ * makes the row shrink to its content instead of filling the container, so
+ * the column has no free space to centre itself in and the tabs sit hard
+ * left. Restoring block layout lets the grid behave as it does around the
+ * article. */
+.topic-tabs .container-md { display: block; }
 
 .topic-tabs-list {
   display: flex;
@@ -232,6 +242,7 @@ input, textarea, select {
 
 .topic-tab {
   display: block;
+  margin-bottom: -1px;   /* overlap the navbar's bottom border exactly */
   font-family: var(--font-sans);
   font-size: 0.875rem;
   font-weight: 400;
