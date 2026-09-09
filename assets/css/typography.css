@@ -14,9 +14,8 @@
   --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 
-  /* Height the topic tab row adds to the fixed navbar: the row itself plus
-   * its margin. Content below has to clear it. */
-  --tabs-h: 3.4375rem;
+  /* Air between the tab row and the first article. */
+  --content-gap: 1.25rem;
 }
 
 /* --- Reading text -------------------------------------------------------- */
@@ -131,7 +130,10 @@ footer,
   letter-spacing: normal;
 }
 
-.navbar-custom .navbar-brand { font-weight: 700; }
+.navbar-custom .navbar-brand {
+  font-weight: 700;
+  font-size: 1.375rem;   /* the theme sets 1.125rem */
+}
 .navbar-custom .nav-link { font-weight: 500; }
 
 .post-preview .post-meta,
@@ -230,10 +232,18 @@ input, textarea, select {
   width: 100%;
 }
 
-/* The theme clears the fixed navbar with a hardcoded margin on .intro-header,
- * which knows nothing about this extra row. Padding adds the difference at
- * every breakpoint without having to restate the theme's own margins. */
-.intro-header { padding-top: var(--tabs-h); }
+/* The theme clears the fixed navbar with a hardcoded margin on .intro-header
+ * that knows nothing about the tab row. Driving the offset from the measured
+ * header height instead gives one place to set how much air sits between the
+ * tabs and the first article. */
+.intro-header {
+  margin-top: calc(var(--nav-h) + var(--content-gap));
+  padding-top: 0;
+}
+
+/* The listing pads every entry to separate them; the first one does not need
+ * it, since the header above already provides the spacing. */
+.posts-list .post-preview:first-child { padding-top: 0; }
 
 .topic-tabs {
   order: 99;
@@ -296,10 +306,12 @@ input, textarea, select {
  * the fixed header: the theme offsets them by 3.75rem, which was already tight
  * against the original navbar and is well short of it now that the tab row is
  * there. Offsetting by the real header height puts the heading in view. */
-:root { --nav-h: 106px; }
+/* Measured height of the fixed header, brand row plus tab row. Drives both the
+ * space above the first article and the offset for anchor links. */
+:root { --nav-h: 108px; }
 
 @media (min-width: 1200px) {
-  :root { --nav-h: 146px; }
+  :root { --nav-h: 128px; }
 }
 
 .linked-section {
@@ -354,6 +366,8 @@ input, textarea, select {
 
 @media (min-width: 768px) {
   body { font-size: 1.25rem; }
+
+  .navbar-custom .navbar-brand { font-size: 1.5rem; }
 
   h2 { font-size: 1.6rem; margin: 2.6rem 0 0.9rem; }
   h3 { font-size: 1.3rem; margin: 2.1rem 0 0.7rem; }
