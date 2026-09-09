@@ -32,6 +32,7 @@
   --light-box-warning: #FDF5D4;
   --light-selection-bg: #B9DCFF;
   --light-selection-fg: #10131A;
+  --light-tab-active: #000000;
 
   --dark-navbar: #1E2128;
   --dark-navbar-text: #D6D9DE;
@@ -53,6 +54,7 @@
   --dark-box-warning: #3A3320;
   --dark-selection-bg: #2F5680;
   --dark-selection-fg: #F2F5F9;
+  --dark-tab-active: #FFFFFF;
 
   /* Active mapping: light by default. */
   --bj-navbar: var(--light-navbar);
@@ -75,6 +77,7 @@
   --bj-box-warning: var(--light-box-warning);
   --bj-selection-bg: var(--light-selection-bg);
   --bj-selection-fg: var(--light-selection-fg);
+  --bj-tab-active: var(--light-tab-active);
 
   color-scheme: light;
 }
@@ -102,6 +105,7 @@
     --bj-box-warning: var(--dark-box-warning);
     --bj-selection-bg: var(--dark-selection-bg);
     --bj-selection-fg: var(--dark-selection-fg);
+    --bj-tab-active: var(--dark-tab-active);
 
     color-scheme: dark;
   }
@@ -129,6 +133,7 @@
   --bj-box-warning: var(--dark-box-warning);
   --bj-selection-bg: var(--dark-selection-bg);
   --bj-selection-fg: var(--dark-selection-fg);
+  --bj-tab-active: var(--dark-tab-active);
 
   color-scheme: dark;
 }

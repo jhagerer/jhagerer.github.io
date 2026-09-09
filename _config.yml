@@ -13,7 +13,7 @@ topic-tabs:
   - Home: "/"
   - Concepts: "/concepts/"
   - Papers: "/papers/"
-  - Student Info: "/student-info/"
+  - Students: "/student-info/"
 
 navbar-links:
   Tags: "tags"

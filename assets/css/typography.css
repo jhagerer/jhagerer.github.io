@@ -206,7 +206,28 @@ input, textarea, select {
  * would keep this row inline with the site name instead of below it. */
 .navbar-custom {
   flex-wrap: wrap;
+  padding-left: 0;     /* the grid inside sets the alignment instead */
+  padding-right: 0;
   padding-bottom: 0;   /* lets the tab row reach the navbar's bottom border */
+}
+
+/* navbar-expand-xl zeroes the padding of a container that is a direct child of
+ * the navbar; restoring Bootstrap's own 15px keeps this container identical to
+ * the one wrapping the article. */
+.navbar-custom > .container-md {
+  display: block;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Brand on the column's left edge, links and theme control on its right. */
+.navbar-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 /* The theme clears the fixed navbar with a hardcoded margin on .intro-header,
@@ -216,9 +237,8 @@ input, textarea, select {
 
 .topic-tabs {
   order: 99;
-  width: calc(100% + 2rem);
-  margin: 0.5rem -1rem 0;   /* cancels the navbar's side padding */
-  border-top: 1px solid var(--bj-navbar-border);
+  width: 100%;
+  margin-top: 0.35rem;
 }
 
 /* Bootstrap turns a container inside a navbar into a flex container. That
@@ -267,7 +287,9 @@ input, textarea, select {
 .topic-tab-current {
   opacity: 1;
   font-weight: 500;
-  border-bottom-color: var(--bj-navbar-text);
+  border-bottom-width: 2px;
+  border-bottom-color: var(--bj-tab-active);
+  color: var(--bj-tab-active);
 }
 
 /* Anchor links into the tag index (the tag chips under each post) land beneath
