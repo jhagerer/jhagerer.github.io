@@ -130,9 +130,19 @@ footer,
   letter-spacing: normal;
 }
 
+/* The site name follows the font stack Medium declares for a profile name,
+ * together with its metrics: 24px, weight 500, -0.016em of tracking.
+ *
+ * The first family is Söhne, a commercial face by Klim Type Foundry that
+ * Medium licenses and serves from its own domain. It is not shipped here and
+ * cannot be, so it resolves only for a reader who already has it installed;
+ * everyone else gets Helvetica Neue or Arial, the grotesques Söhne descends
+ * from and the same fallbacks Medium itself names. */
 .navbar-custom .navbar-brand {
-  font-weight: 700;
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
   font-size: 1.375rem;   /* the theme sets 1.125rem */
+  letter-spacing: -0.016em;
 }
 .navbar-custom .nav-link { font-weight: 500; }
 
