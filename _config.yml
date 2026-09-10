@@ -17,9 +17,8 @@ topic-tabs:
   - Concepts: "/concepts/"
   - Papers: "/papers/"
   - Students: "/student-info/"
+  - Tags: "/tags/"
 
-navbar-links:
-  Tags: "tags"
 
 social-network-links:
   github: jhagerer
@@ -60,6 +59,7 @@ site-css:
   - "/assets/css/theme-toggle.css"
   - "/assets/css/typography.css"
 site-js:
+  - "/assets/js/header-height.js"
   - "/assets/js/theme-toggle.js"
 
 defaults:

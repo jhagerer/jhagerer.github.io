@@ -238,78 +238,15 @@ input, textarea, select {
 ::placeholder { color: var(--bj-text); opacity: 0.55; }
 ::-webkit-input-placeholder { color: var(--bj-text); opacity: 0.55; }
 
-/* --- Menu button and its popup ---------------------------------------------
+/* --- Header actions -------------------------------------------------------
  *
- * The theme's collapse expands in flow, so opening it grew the header and
- * pushed the tabs and the article down the page. Below the expand breakpoint
- * the menu is positioned instead, so it floats over the page as a popup and
- * the header keeps its height whether it is open or shut.
- *
- * It anchors to .navbar-row, which is the grid column, so the popup's right
- * edge lines up with the button and with the column rather than the viewport. */
+ * The theme's collapse and its toggler are gone: the one link they held is a
+ * tab now, so the theme control sits directly in the header and there is no
+ * menu to open. */
 
-.navbar-row { position: relative; }
-
-.navbar-custom .navbar-toggler {
-  border: none;
-  padding: 0.5rem 0.35rem;
-  outline: none;
-}
-
-.navbar-custom .navbar-toggler:focus-visible {
-  outline: 2px solid var(--bj-link);
-  outline-offset: 2px;
-}
-
-.menu-dots {
+.navbar-actions {
   display: flex;
   align-items: center;
-  gap: 3px;
-}
-
-.menu-dots i {
-  display: block;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: var(--bj-navbar-text);
-  opacity: 0.5;   /* reads grey against either palette */
-}
-
-.navbar-custom .navbar-toggler:hover .menu-dots i {
-  background-color: var(--bj-hover);
-  opacity: 1;
-}
-
-@media (max-width: 1199.98px) {
-  .navbar-custom .navbar-collapse {
-    position: absolute;
-    top: calc(100% + 0.5rem);
-    right: 0;
-    /* The theme gives this negative side margins so its full-width mobile menu
-     * bleeds past the navbar padding. Positioning resolves against the margin
-     * box, so those would push the popup off the column's right edge. */
-    margin-left: 0;
-    margin-right: 0;
-    z-index: 1050;
-    min-width: 11rem;
-    padding: 0.35rem 0.9rem;
-    background-color: var(--bj-page);
-    border: 1px solid var(--bj-navbar-border);
-    border-radius: 8px;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
-  }
-
-  /* The collapse animation writes an inline height; keep the popup's own
-   * padding from being clipped while it runs. */
-  .navbar-custom .navbar-collapse.collapsing { overflow: hidden; }
-
-  /* The theme styles this as a full-width drawer: a rule across the top and
-   * items indented by 1rem. Inside a bordered popup neither applies. */
-  .navbar-custom .navbar-collapse { border-top: none; }
-  .navbar-custom .navbar-collapse .navbar-nav { width: 100%; padding: 0; }
-  .navbar-custom .navbar-collapse .nav-link { padding: 0.5rem 0; text-align: left; }
-  .navbar-custom .navbar-collapse .nav-item.theme-toggle-item { margin: 0.35rem 0 0.15rem; }
 }
 
 /* --- Topic tabs -----------------------------------------------------------
@@ -421,8 +358,13 @@ input, textarea, select {
  * the fixed header: the theme offsets them by 3.75rem, which was already tight
  * against the original navbar and is well short of it now that the tab row is
  * there. Offsetting by the real header height puts the heading in view. */
-/* Measured height of the fixed header, brand row plus tab row. Drives both the
- * space above the first article and the offset for anchor links. */
+/* Height of the fixed header, brand row plus tab row. Drives both the space
+ * above the first article and the offset for anchor links.
+ *
+ * assets/js/header-height.js measures the header and overwrites this on
+ * :root, so these values only matter before that runs and for a reader
+ * without scripting. They are the current heights, so nothing moves when the
+ * script takes over. */
 :root { --nav-h: 124px; }
 
 @media (min-width: 1200px) {

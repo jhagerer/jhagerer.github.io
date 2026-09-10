@@ -57,7 +57,10 @@
   }
 
   function build() {
-    var nav = document.querySelector('.navbar-custom .navbar-nav');
+    // The navbar carries a slot for this; the nav list is the fallback for a
+    // navbar that still renders the theme's own collapse.
+    var nav = document.querySelector('.navbar-actions')
+           || document.querySelector('.navbar-custom .navbar-nav');
     if (!nav) {
       return;
     }
