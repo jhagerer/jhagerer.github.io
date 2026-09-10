@@ -6,6 +6,7 @@ url: "https://jhagerer.github.io"
 remote_theme: daattali/beautiful-jekyll@6.0.1
 
 brand-avatar: "/assets/img/profile.jpg"
+brand-tagline: "NLP, Agentic AI, Legal Reasoning"
 
 navbar-extra:
   - topic-tabs.html

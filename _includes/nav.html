@@ -20,7 +20,12 @@
                 <img class="brand-avatar" src="{{ site.brand-avatar | relative_url }}"
                      width="40" height="40" alt="" />
               {%- endif -%}
-              <span class="brand-name">{{ site.title }}</span>
+              <span class="brand-text">
+                <span class="brand-name">{{ site.title }}</span>
+                {%- if site.brand-tagline -%}
+                  <span class="brand-tagline">{{ site.brand-tagline }}</span>
+                {%- endif -%}
+              </span>
             </a>
           {%- endif -%}
 

@@ -148,6 +148,24 @@ footer,
   letter-spacing: -0.016em;
 }
 
+/* Name and tagline stack beside the picture. Both sit inside the brand link,
+ * so the whole block is one target back to the home page. */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brand-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: var(--bj-navbar-text);
+  opacity: 0.6;
+  margin-top: 0.2rem;
+}
+
 /* Profile picture beside the name. object-fit keeps a non-square source from
  * being stretched; the asset is already cropped square. */
 .brand-avatar {
@@ -246,18 +264,22 @@ input, textarea, select {
 .menu-dots {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
 }
 
 .menu-dots i {
   display: block;
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
   background-color: var(--bj-navbar-text);
+  opacity: 0.5;   /* reads grey against either palette */
 }
 
-.navbar-custom .navbar-toggler:hover .menu-dots i { background-color: var(--bj-hover); }
+.navbar-custom .navbar-toggler:hover .menu-dots i {
+  background-color: var(--bj-hover);
+  opacity: 1;
+}
 
 @media (max-width: 1199.98px) {
   .navbar-custom .navbar-collapse {
@@ -401,10 +423,10 @@ input, textarea, select {
  * there. Offsetting by the real header height puts the heading in view. */
 /* Measured height of the fixed header, brand row plus tab row. Drives both the
  * space above the first article and the offset for anchor links. */
-:root { --nav-h: 114px; }
+:root { --nav-h: 124px; }
 
 @media (min-width: 1200px) {
-  :root { --nav-h: 134px; }
+  :root { --nav-h: 144px; }
 }
 
 .linked-section {
@@ -462,6 +484,7 @@ input, textarea, select {
 
   .navbar-custom .navbar-brand { font-size: 1.75rem; }
   .brand-avatar { width: 2.5rem; height: 2.5rem; }
+  .brand-tagline { font-size: 0.875rem; }
 
   h2 { font-size: 1.6rem; margin: 2.6rem 0 0.9rem; }
   h3 { font-size: 1.3rem; margin: 2.1rem 0 0.7rem; }
