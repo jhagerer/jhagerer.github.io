@@ -139,10 +139,23 @@ footer,
  * everyone else gets Helvetica Neue or Arial, the grotesques Söhne descends
  * from and the same fallbacks Medium itself names. */
 .navbar-custom .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
-  font-size: 1.375rem;   /* the theme sets 1.125rem */
+  font-size: 1.5rem;   /* the theme sets 1.125rem */
   letter-spacing: -0.016em;
+}
+
+/* Profile picture beside the name. object-fit keeps a non-square source from
+ * being stretched; the asset is already cropped square. */
+.brand-avatar {
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .navbar-custom .nav-link { font-weight: 500; }
 
@@ -318,10 +331,10 @@ input, textarea, select {
  * there. Offsetting by the real header height puts the heading in view. */
 /* Measured height of the fixed header, brand row plus tab row. Drives both the
  * space above the first article and the offset for anchor links. */
-:root { --nav-h: 108px; }
+:root { --nav-h: 114px; }
 
 @media (min-width: 1200px) {
-  :root { --nav-h: 128px; }
+  :root { --nav-h: 134px; }
 }
 
 .linked-section {
@@ -377,7 +390,8 @@ input, textarea, select {
 @media (min-width: 768px) {
   body { font-size: 1.25rem; }
 
-  .navbar-custom .navbar-brand { font-size: 1.5rem; }
+  .navbar-custom .navbar-brand { font-size: 1.75rem; }
+  .brand-avatar { width: 2.5rem; height: 2.5rem; }
 
   h2 { font-size: 1.6rem; margin: 2.6rem 0 0.9rem; }
   h3 { font-size: 1.3rem; margin: 2.1rem 0 0.7rem; }
