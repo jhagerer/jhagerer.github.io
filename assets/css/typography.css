@@ -430,7 +430,7 @@ input, textarea, select {
 .post-preview .post-title {
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 1.24;
   letter-spacing: -0.022em;
   margin-bottom: 0.5rem;
@@ -583,7 +583,7 @@ footer a {
   h2 { font-size: 1.6rem; margin: 2.6rem 0 0.9rem; }
   h3 { font-size: 1.3rem; margin: 2.1rem 0 0.7rem; }
 
-  .post-preview .post-title { font-size: 1.65rem; line-height: 1.23; }
+  .post-preview .post-title { font-size: 1.5rem; line-height: 1.25; }
   .post-preview .post-subtitle { font-size: 1.05rem; }
 
   .intro-header .post-heading .post-subheading { font-size: 1.6875rem; }
