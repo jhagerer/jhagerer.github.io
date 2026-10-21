@@ -1,0 +1,52 @@
+---
+common-css:
+  - "/assets/vendor/bootstrap/bootstrap.min.css"
+  - "/assets/vendor/fontawesome/css/all.min.css"
+  - "/assets/vendor/fonts/fonts.css"
+  - "/assets/css/bootstrap-social.css"
+  - "/assets/css/beautifuljekyll.css"
+common-js:
+  - "/assets/vendor/jquery/jquery.slim.min.js"
+  - "/assets/vendor/popper/popper.min.js"
+  - "/assets/vendor/bootstrap/bootstrap.min.js"
+  - "/assets/js/beautifuljekyll.js"
+---
+{%- comment -%}
+  Forked from beautiful-jekyll 6.0.1. The one change is the front matter
+  above: the theme's `common-ext-css` and `common-ext-js` fetch Bootstrap,
+  Font Awesome, jQuery, Popper and two Google Fonts families from five
+  third-party hosts, each of which then sees the visitor's IP address. Those
+  lists are gone and the files are served from this origin, so a page view
+  reaches no one but GitHub Pages.
+
+  Lora and Open Sans are not replaced. Measured across every page, Lora
+  rendered nothing at all, and Open Sans reached only the footer line, the
+  pagination links and the tag index, which typography.css now sets in Inter
+  with the rest of the interface.
+
+  Re-apply when bumping the pinned theme version, and check whether the
+  theme's own versions of Bootstrap, jQuery, Popper or Font Awesome moved:
+  the copies under /assets/vendor are pinned to 4.4.1, 3.5.1 slim, 1.16.0
+  and 5.12.1 to match this release.
+{%- endcomment -%}
+
+
+<!DOCTYPE html>
+<html lang="{{ page.language | default: site.language | default: 'en' }}">
+<!-- Beautiful Jekyll 6.0.1 | Copyright Dean Attali 2023 -->
+{% include head.html %}
+
+<body>
+
+  {% include gtm_body.html %}
+
+  {% include nav.html %}
+
+  {{ content }}
+
+  {% include footer.html %}
+
+  {% include footer-scripts.html %}
+
+</body>
+</html>
