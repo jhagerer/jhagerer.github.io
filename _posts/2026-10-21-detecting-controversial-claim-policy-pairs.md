@@ -3,6 +3,8 @@ title: "Detecting Controversial Claim–Policy Pairs: Three Training-Free LLM Wo
 subtitle: "TUM NLP Lab Course, winter term 2026/27 — topic definition for my student group on insurance and legal NLP"
 date: 2026-10-21 14:00:00 +0200
 tags: [projects]
+venue-name: "Johann Hagerer"
+venue-logo: profile.jpg
 ---
 
 | Field | Value |

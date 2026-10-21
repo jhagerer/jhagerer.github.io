@@ -3,6 +3,8 @@ title: "Evaluation Sheet for Student Research Projects"
 subtitle: "The checklist I use to grade lab courses and theses"
 date: 2026-09-06 14:00:00 +0200
 tags: [student-advice]
+venue-name: "Johann Hagerer"
+venue-logo: profile.jpg
 ---
 
 The following is a checklist for student research projects, such as lab courses or

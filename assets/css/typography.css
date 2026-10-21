@@ -109,7 +109,7 @@ h1 {
 
 /* The theme sets an article's title at 2.1875rem, and 3.125rem from 768px up,
  * which towers over the reading column. */
-.intro-header .post-heading h1 { font-size: 1.6rem; }
+.intro-header .post-heading h1 { font-size: 1.45rem; }
 
 h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
@@ -123,7 +123,7 @@ h3 { font-size: 1.15rem; margin: 1.8rem 0 0.6rem; }
 
 .intro-header .post-heading .post-subheading {
   font-family: var(--font-sans);
-  font-size: 1.25rem;   /* the theme holds this at 1.6875rem on every screen */
+  font-size: 1.1rem;   /* the theme holds this at 1.6875rem on every screen */
   font-weight: 400;
   font-style: normal;
   letter-spacing: -0.003em;
@@ -638,6 +638,15 @@ img.venue-logo {
 /* An inlined one-colour mark follows the line's colour; one with its own
  * brand colour keeps it. */
 .venue-logo-arxiv { color: var(--bj-text); }
+
+/* My own articles carry my name, with the same round portrait the header
+ * uses rather than a publisher's mark. */
+img.venue-logo-profile {
+  width: 1.45em;
+  height: 1.45em;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
 /* In an article's header the line leads a much larger title, so it is given
  * a little more room and size than it has in a listing. */

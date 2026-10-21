@@ -22,7 +22,7 @@
       {%- capture venue_logo_path %}venues/{{ post.venue-logo }}{% endcapture -%}
       <span class="venue-logo venue-logo-{{ post.venue-logo | split: '.' | first }}" aria-hidden="true">{% include {{ venue_logo_path }} %}</span>
     {%- else -%}
-      <img class="venue-logo" src="{{ post.venue-logo | prepend: '/assets/img/venues/' | relative_url }}" alt="" aria-hidden="true">
+      <img class="venue-logo venue-logo-{{ post.venue-logo | split: '.' | first }}" src="{{ post.venue-logo | prepend: '/assets/img/venues/' | relative_url }}" alt="" aria-hidden="true">
     {%- endif -%}
   {%- endif -%}
   {%- if post.venue-url -%}
