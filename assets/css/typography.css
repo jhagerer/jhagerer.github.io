@@ -109,7 +109,7 @@ h1 {
 
 /* The theme sets an article's title at 2.1875rem, and 3.125rem from 768px up,
  * which towers over the reading column. */
-.intro-header .post-heading h1 { font-size: 1.85rem; }
+.intro-header .post-heading h1 { font-size: 1.6rem; }
 
 h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
@@ -667,6 +667,6 @@ img.venue-logo {
   .post-preview .post-title { font-size: 1.5rem; line-height: 1.25; }
   .post-preview .post-subtitle { font-size: 1.05rem; }
 
-  .intro-header .post-heading h1 { font-size: 2.35rem; }
-  .intro-header .post-heading .post-subheading { font-size: 1.6875rem; }
+  .intro-header .post-heading h1 { font-size: 2rem; }
+  .intro-header .post-heading .post-subheading { font-size: 1.25rem; }
 }
