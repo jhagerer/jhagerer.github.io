@@ -107,6 +107,10 @@ h1 {
   line-height: 1.18;
 }
 
+/* The theme sets an article's title at 2.1875rem, and 3.125rem from 768px up,
+ * which towers over the reading column. */
+.intro-header .post-heading h1 { font-size: 1.85rem; }
+
 h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
   font-weight: 700;
@@ -607,13 +611,18 @@ footer a {
   opacity: 0.65;
 }
 
-[role="main"] .post-venue a {
+/* An article's header sits outside [role="main"], so the venue line there
+ * needs its own selector or the theme's link colour wins. */
+[role="main"] .post-venue a,
+.intro-header .post-venue a {
   color: inherit;
   text-decoration: none;
 }
 
 [role="main"] .post-venue a:hover,
-[role="main"] .post-venue a:focus-visible {
+[role="main"] .post-venue a:focus-visible,
+.intro-header .post-venue a:hover,
+.intro-header .post-venue a:focus-visible {
   color: var(--bj-link);
   text-decoration: underline;
 }
@@ -629,6 +638,13 @@ img.venue-logo {
 /* An inlined one-colour mark follows the line's colour; one with its own
  * brand colour keeps it. */
 .venue-logo-arxiv { color: var(--bj-text); }
+
+/* In an article's header the line leads a much larger title, so it is given
+ * a little more room and size than it has in a listing. */
+.intro-header .post-heading .post-venue {
+  font-size: 0.85rem;
+  margin-bottom: 0.7rem;
+}
 
 /* --- Larger screens -------------------------------------------------------
  *
@@ -651,5 +667,6 @@ img.venue-logo {
   .post-preview .post-title { font-size: 1.5rem; line-height: 1.25; }
   .post-preview .post-subtitle { font-size: 1.05rem; }
 
+  .intro-header .post-heading h1 { font-size: 2.35rem; }
   .intro-header .post-heading .post-subheading { font-size: 1.6875rem; }
 }
