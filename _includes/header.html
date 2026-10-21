@@ -1,8 +1,17 @@
 {%- comment -%}
-  Forked from beautiful-jekyll 6.0.1. The only change is the date line:
-  the theme renders "Posted on <date>" and this drops the prefix, which
-  cannot be done from CSS because the label and the date are one text
-  node. Re-apply this change when bumping the pinned theme version.
+  Forked from beautiful-jekyll 6.0.1. Two changes, both to be re-applied when
+  bumping the pinned theme version.
+
+  1. The date line: the theme renders "Posted on <date>" and this drops the
+     prefix, which cannot be done from CSS because the label and the date are
+     one text node.
+
+  2. A page renders no <h1> and no <hr>, only its subtitle. The tab row above
+     already names the section, so the heading repeated the tab's own label,
+     and the rule under it sat a few pixels below the tab row's own. Posts are
+     untouched: there the heading is the article's title. The heading block is
+     skipped altogether for a page without a subtitle, so that nothing is left
+     holding empty space.
 {%- endcomment -%}
 <!-- TODO this file has become a mess, refactor it -->
 
@@ -32,11 +41,13 @@
   <div class="container-md">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        {%- if include.type != "page" or page.subtitle -%}
         <div class="{{ include.type }}-heading">
+          {% if include.type != "page" %}
           <h1>{% if page.title %}{{ page.title | strip_html }}{% else %}<br/>{% endif %}</h1>
+          {% endif %}
           {% if page.subtitle %}
             {% if include.type == "page" %}
-              <hr class="small">
               <span class="{{ include.type }}-subheading">{{ page.subtitle | strip_html }}</span>
             {% else %}
               <h2 class="{{ include.type }}-subheading">{{ page.subtitle | strip_html }}</h2>
@@ -56,6 +67,7 @@
             {% endif %}
           {% endif %}
         </div>
+        {%- endif -%}
       </div>
     </div>
   </div>
@@ -66,11 +78,13 @@
   <div class="container-md">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        {%- if include.type != "page" or page.subtitle -%}
         <div class="{{ include.type }}-heading">
+          {% if include.type != "page" %}
           <h1>{% if page.title %}{{ page.title | strip_html }}{% else %}<br/>{% endif %}</h1>
+          {% endif %}
           {% if page.subtitle %}
             {% if include.type == "page" %}
-              <hr class="small">
               <span class="{{ include.type }}-subheading">{{ page.subtitle | strip_html }}</span>
             {% else %}
               <h2 class="{{ include.type }}-subheading">{{ page.subtitle | strip_html }}</h2>
@@ -90,6 +104,7 @@
             {% endif %}
           {% endif %}
         </div>
+        {%- endif -%}
       </div>
     </div>
   </div>

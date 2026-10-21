@@ -116,7 +116,6 @@ h2, h3, h4, h5, h6 {
 h2 { font-size: 1.4rem; margin: 2.2rem 0 0.8rem; }
 h3 { font-size: 1.15rem; margin: 1.8rem 0 0.6rem; }
 
-.intro-header .page-heading .page-subheading,
 .intro-header .post-heading .post-subheading {
   font-family: var(--font-sans);
   font-size: 1.25rem;   /* the theme holds this at 1.6875rem on every screen */
@@ -125,6 +124,27 @@ h3 { font-size: 1.15rem; margin: 1.8rem 0 0.6rem; }
   letter-spacing: -0.003em;
   line-height: 1.4;
   opacity: 0.75;
+}
+
+/* A section page carries no heading of its own, the tab row above having
+ * already named it, so its subtitle stands alone and describes the section
+ * rather than continuing a title. The theme centres the block and sizes it as
+ * a title's second line; on its own it reads as a heading, so it sits on the
+ * column's left edge at the size of a listing's subtitle instead. An
+ * article's subtitle keeps the theme's treatment, since it still follows the
+ * article's own h1. */
+.intro-header .page-heading {
+  text-align: left;
+}
+
+.intro-header .page-heading .page-subheading {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 1.45;
+  opacity: 0.72;
 }
 
 /* --- Interface chrome ---------------------------------------------------- */
@@ -447,6 +467,5 @@ input, textarea, select {
   .post-preview .post-title { font-size: 1.9rem; line-height: 1.22; }
   .post-preview .post-subtitle { font-size: 1.05rem; }
 
-  .intro-header .page-heading .page-subheading,
   .intro-header .post-heading .post-subheading { font-size: 1.6875rem; }
 }
