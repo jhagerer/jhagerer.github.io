@@ -3,6 +3,8 @@ title: "Predicting consensus in legal document interpretation"
 subtitle: "Waldon, Brodsky, Ma & Degen (2023) — false consensus bias in contract reading, and whether an LLM can predict it"
 date: 2026-09-06 10:00:00 +0200
 tags: [papers]
+thumbnail-img: /assets/img/papers/waldon-false-consensus.png
+thumbnail-alt: "Scatter plot of estimated agreement against actual agreement, with most points above the diagonal"
 ---
 
 **Authors:** Brandon Waldon, Madigan Brodsky, Megan Ma, Judith Degen
@@ -34,6 +36,19 @@ tags: [papers]
 
 <small>Abstract quoted from the paper, which is published under a
 <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> licence.</small>
+
+<figure class="post-figure">
+  <img src="/assets/img/papers/waldon-false-consensus.png"
+       alt="Three scatter panels, one per condition: not covered, controversial and
+            covered. Each plots a reader's mean estimate of how far others agree
+            against the proportion of readers who in fact judged that way, with a
+            dashed diagonal marking perfect calibration. Most points sit above the
+            diagonal, and the gap is widest in the middle, controversial panel.">
+  <figcaption>The bias itself: what readers expect others to agree against what
+  others in fact answered, by condition. Points above the dashed diagonal are
+  over-estimates. From the authors' replication package
+  (<a href="https://github.com/madiganbrodsky/vague_contracts">analyses/1_falseconsensus</a>).</figcaption>
+</figure>
 
 ## Notes
 

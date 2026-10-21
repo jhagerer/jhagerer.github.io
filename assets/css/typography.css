@@ -446,6 +446,62 @@ input, textarea, select {
 }
 
 
+/* --- Figures --------------------------------------------------------------
+ *
+ * A figure quoted from a paper, in the article and as a thumbnail beside the
+ * listing entry. The theme's listing thumbnail is a 12rem square under
+ * grayscale(40%), which suits a decorative photo; a plot or a diagram is
+ * content, so it keeps its colour and its own proportions, and sits at the
+ * size of a thumbnail rather than a quarter of the column. */
+
+[role="main"] .post-figure {
+  margin: 0 0 var(--block-space);
+}
+
+[role="main"] .post-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--bj-rule);
+  border-radius: 4px;
+}
+
+[role="main"] .post-figure figcaption {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  letter-spacing: normal;
+  opacity: 0.68;
+  margin-top: 0.55rem;
+}
+
+.post-preview .post-image,
+.post-preview .post-image:hover {
+  float: right;
+  width: 7rem;
+  height: auto;          /* the theme fixes a square; a figure keeps its shape */
+  margin: 0.3rem 0 0.5rem 1.1rem;
+  filter: none;
+}
+
+.post-preview .post-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;      /* the theme caps these at the square's height */
+  max-width: 100%;
+  border: 1px solid var(--bj-rule);
+  border-radius: 4px;
+}
+
+/* Under 500px the theme hides the floated thumbnail and shows a centred one
+ * below the date instead. At this size the float still fits beside the title,
+ * and keeping it there keeps the entries a uniform shape. */
+@media (max-width: 500px) {
+  .post-preview .post-image { display: block; width: 5rem; }
+  .post-preview .post-image-small { display: none; }
+}
+
 /* --- Larger screens -------------------------------------------------------
  *
  * The sizes above are the small-screen ones. A phone column is roughly half

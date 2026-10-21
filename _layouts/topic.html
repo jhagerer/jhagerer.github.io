@@ -4,7 +4,8 @@ layout: page
 
 {%- comment -%}
   Lists the posts of a single tag, named in the page's `tag` front matter.
-  Mirrors the home listing's markup so it picks up the same styling.
+  Mirrors the home listing's markup so it picks up the same styling, including
+  the theme's `thumbnail-img` front matter key and its .post-image wrapper.
 {%- endcomment -%}
 
 {%- assign posts = site.tags[page.tag] -%}
@@ -14,6 +15,14 @@ layout: page
   {%- for post in posts %}
   <li class="post-preview">
     <article>
+      {%- if post.thumbnail-img %}
+      <div class="post-image post-image-normal">
+        <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
+          <img src="{{ post.thumbnail-img | absolute_url }}" alt="{{ post.thumbnail-alt | default: 'Figure from the publication' | strip_html }}">
+        </a>
+      </div>
+      {%- endif %}
+
       <a href="{{ post.url | absolute_url }}">
         <h2 class="post-title">{{ post.title | strip_html }}</h2>
         {%- if post.subtitle %}

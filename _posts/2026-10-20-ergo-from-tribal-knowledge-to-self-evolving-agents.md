@@ -3,6 +3,8 @@ title: "From Tribal Knowledge to Self-evolving Agents"
 subtitle: "ERGO Innovation Lab, Google Cloud & Deloitte (2026) — capturing, governing and scaling institutional knowledge in financial enterprises"
 date: 2026-10-20 09:00:00 +0200
 tags: [papers]
+thumbnail-img: /assets/img/papers/ergo-knowledge-iceberg.jpg
+thumbnail-alt: "The knowledge iceberg: documented surface knowledge above the waterline, buried knowledge below"
 ---
 
 **Authors:** Thuy Emilia Dang (Innovation Developer, ERGO Group AG), Michael Zimmermann
@@ -20,6 +22,17 @@ Dr. Matthias Lein (Head of AI Foundations, ERGO Group AG)
 **Keywords:** self-evolving agents, tribal knowledge, agentic AI, insurance, knowledge management, AI governance
 
 ## Summary
+
+<figure class="post-figure">
+  <img src="/assets/img/papers/ergo-knowledge-iceberg.jpg"
+       alt="The knowledge iceberg. Above the waterline, surface knowledge, labelled
+            as the only context agents are designed with. Below it, buried knowledge:
+            the context, human shortcuts, cultural DNA, expert instincts, human
+            intuition and informal networks, which people draw on and learn from
+            on the job.">
+  <figcaption>The knowledge iceberg, the paper's central image. Figure from the
+  whitepaper, p. 5 &middot; &copy; ERGO Group AG</figcaption>
+</figure>
 
 The subject is the knowledge an insurer runs on that was never written down: the
 shortcuts, exceptions and decision patterns that live in experience and get passed

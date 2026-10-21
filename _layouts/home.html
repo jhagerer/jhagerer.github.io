@@ -2,10 +2,15 @@
 layout: page
 ---
 {%- comment -%}
-  Forked from beautiful-jekyll 6.0.1. The only change is the date line:
-  the theme renders "Posted on <date>" and this drops the prefix, which
-  cannot be done from CSS because the label and the date are one text
-  node. Re-apply this change when bumping the pinned theme version.
+  Forked from beautiful-jekyll 6.0.1. Two changes, to be re-applied when
+  bumping the pinned theme version.
+
+  1. The date line: the theme renders "Posted on <date>" and this drops the
+     prefix, which cannot be done from CSS because the label and the date are
+     one text node.
+  2. A thumbnail's alt text comes from the post's `thumbnail-alt`, falling
+     back to the theme's wording. These thumbnails are figures from the papers
+     rather than decoration, so they are worth describing.
 {%- endcomment -%}
 
 {{ content }}
@@ -36,7 +41,7 @@ layout: page
       {% if thumbnail != "" %}
       <div class="post-image post-image-normal">
         <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
-          <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
+          <img src="{{ thumbnail | absolute_url }}" alt="{{ post.thumbnail-alt | default: 'Post thumbnail' | strip_html }}">
         </a>
       </div>
       {% endif %}
@@ -60,7 +65,7 @@ layout: page
       {% if thumbnail != "" %}
       <div class="post-image post-image-small">
         <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
-          <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
+          <img src="{{ thumbnail | absolute_url }}" alt="{{ post.thumbnail-alt | default: 'Post thumbnail' | strip_html }}">
         </a>
       </div>
       {% endif %}
@@ -69,7 +74,7 @@ layout: page
       {% if thumbnail != "" %}
       <div class="post-image post-image-short">
         <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
-          <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
+          <img src="{{ thumbnail | absolute_url }}" alt="{{ post.thumbnail-alt | default: 'Post thumbnail' | strip_html }}">
         </a>
       </div>
       {% endif %}
