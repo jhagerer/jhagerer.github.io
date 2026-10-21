@@ -15,6 +15,15 @@ layout: page
   {%- for post in posts %}
   <li class="post-preview">
     <article>
+      <div class="post-preview-text">
+        <a href="{{ post.url | absolute_url }}">
+          <h2 class="post-title">{{ post.title | strip_html }}</h2>
+          {%- if post.subtitle %}
+          <h3 class="post-subtitle">{{ post.subtitle | strip_html }}</h3>
+          {%- endif %}
+        </a>
+        <p class="post-meta">{{ post.date | date: site.date_format }}</p>
+      </div>
       {%- if post.thumbnail-img %}
       <div class="post-image post-image-normal">
         <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
@@ -22,14 +31,6 @@ layout: page
         </a>
       </div>
       {%- endif %}
-
-      <a href="{{ post.url | absolute_url }}">
-        <h2 class="post-title">{{ post.title | strip_html }}</h2>
-        {%- if post.subtitle %}
-        <h3 class="post-subtitle">{{ post.subtitle | strip_html }}</h3>
-        {%- endif %}
-      </a>
-      <p class="post-meta">{{ post.date | date: site.date_format }}</p>
     </article>
   </li>
   {%- endfor %}

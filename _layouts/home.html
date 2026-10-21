@@ -11,6 +11,10 @@ layout: page
   2. A thumbnail's alt text comes from the post's `thumbnail-alt`, falling
      back to the theme's wording. These thumbnails are figures from the papers
      rather than decoration, so they are worth describing.
+  3. The entry is a text column beside an image column, rather than text with
+     a floated image in it. The theme floats the thumbnail, so a short title
+     left the subtitle wrapping around and under the image; as its own column
+     the image stays level with the heading whatever the text does.
 {%- endcomment -%}
 
 {{ content }}
@@ -37,15 +41,7 @@ layout: page
       {% endcapture %}
       {% assign thumbnail=thumbnail | strip %}
 
-      {% if site.feed_show_excerpt == false %}
-      {% if thumbnail != "" %}
-      <div class="post-image post-image-normal">
-        <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
-          <img src="{{ thumbnail | absolute_url }}" alt="{{ post.thumbnail-alt | default: 'Post thumbnail' | strip_html }}">
-        </a>
-      </div>
-      {% endif %}
-      {% endif %}
+      <div class="post-preview-text">
 
       <a href="{{ post.url | absolute_url }}">
         <h2 class="post-title">{{ post.title | strip_html }}</h2>
@@ -101,6 +97,18 @@ layout: page
           {% endfor %}
         </ul>
       </div>
+      {% endif %}
+
+      </div>
+
+      {% if site.feed_show_excerpt == false %}
+      {% if thumbnail != "" %}
+      <div class="post-image post-image-normal">
+        <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
+          <img src="{{ thumbnail | absolute_url }}" alt="{{ post.thumbnail-alt | default: 'Post thumbnail' | strip_html }}">
+        </a>
+      </div>
+      {% endif %}
       {% endif %}
 
     </article>

@@ -475,12 +475,28 @@ input, textarea, select {
   margin-top: 0.55rem;
 }
 
+/* The entry is a text column beside an image column. The theme floats the
+ * thumbnail inside the text, which leaves a short title's subtitle wrapping
+ * around and under it; as its own column the image stays level with the
+ * heading whatever the text does. */
+.post-preview article {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.15rem;
+}
+
+.post-preview-text {
+  flex: 1 1 auto;
+  min-width: 0;          /* without it a long unbroken title widens the row */
+}
+
 .post-preview .post-image,
 .post-preview .post-image:hover {
-  float: right;
+  flex: 0 0 auto;
+  float: none;
   width: 7rem;
   height: auto;          /* the theme fixes a square; a figure keeps its shape */
-  margin: 0.3rem 0 0.5rem 1.1rem;
+  margin: 0.4rem 0 0;
   filter: none;
 }
 
@@ -500,6 +516,13 @@ input, textarea, select {
 @media (max-width: 500px) {
   .post-preview .post-image { display: block; width: 5rem; }
   .post-preview .post-image-small { display: none; }
+}
+
+/* The rule closing the header, under a page's subtitle. */
+.intro-header .page-heading .page-rule {
+  margin: 0.95rem 0 0;
+  border: 0;
+  border-top: 1px solid var(--bj-rule);
 }
 
 /* --- Larger screens -------------------------------------------------------

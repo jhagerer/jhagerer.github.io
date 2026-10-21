@@ -16,6 +16,11 @@ tags: [papers]
 
 **URL:** <https://aclanthology.org/2026.acl-long.1035/>
 
+**Code and data:** <https://github.com/lius64909-prog/InsLogicBench> — Apache-2.0, with
+the dataset on Google Drive. Not formally attributed to the authors, but the released
+schema matches the paper: propositions, clause-level judgments, exclusions and their
+exceptions, and the four coverage/exclusion scenarios.
+
 ## Summary
 
 A benchmark for insurance claims adjudication, where a decision has to be derived
