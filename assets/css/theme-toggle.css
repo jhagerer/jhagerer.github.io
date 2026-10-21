@@ -204,7 +204,11 @@ table tr,
 }
 
 table tr:nth-child(2n) { background-color: var(--bj-stripe); }
-table, table tr, table th, table td { border-color: var(--bj-rule); }
+/* The theme's own gridlines are `table tr th` and `table tr td` at #ccc, which
+ * outranks a bare `table td`. In dark mode that leaves bright grey lines on a
+ * dark surface, so these selectors match the theme's specificity. */
+table, table tr,
+table tr th, table tr td { border-color: var(--bj-rule); }
 
 .box-success { border-color: var(--bj-rule); }
 .box-note { background-color: var(--bj-box-note); }

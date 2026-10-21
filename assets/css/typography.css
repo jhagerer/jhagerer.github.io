@@ -63,6 +63,19 @@ pre,
   margin: 0;
 }
 
+/* A table wider than the column scrolls inside itself rather than widening the
+ * page. Without this a single long cell — an identifier that cannot be broken,
+ * say — pushes the whole document past the viewport on a phone, and every
+ * paragraph then sits in a horizontally scrolling page. display:block is what
+ * makes the table a scroll container; width:fit-content keeps a table that
+ * already fits at its natural width instead of stretching it. */
+[role="main"] table {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 /* Nested lists and list paragraphs sit tighter than top-level blocks. */
 li > ul, li > ol { margin-top: 0.4rem; margin-bottom: 0.4rem; }
 li > p:last-child { margin-bottom: 0; }

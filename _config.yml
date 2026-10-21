@@ -16,6 +16,7 @@ topic-tabs:
   - Home: "/"
   - Concepts: "/concepts/"
   - Papers: "/papers/"
+  - Projects: "/projects/"
   - Students: "/student-info/"
   - Tags: "/tags/"
 
