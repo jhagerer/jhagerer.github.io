@@ -3,6 +3,9 @@ title: "InsLogicBench: An Argumentation Logic Grounded Benchmark for Complex Ins
 subtitle: "Liu et al. (2026) — whether a model can justify an insurance decision, not just arrive at one"
 date: 2026-10-18 09:00:00 +0200
 tags: [papers]
+venue-name: "Association for Computational Linguistics"
+venue-logo: acl.svg
+venue-url: "https://aclanthology.org/2026.acl-long.1035/"
 ---
 
 **Authors:** Jin Liu, Yunpeng Liu, Keyi Wang, Jie Shi, Xiao Xu, Wenkang Huang, Xingzhong Xu, Xin Liang, Yanghua Xiao

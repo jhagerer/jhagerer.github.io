@@ -3,6 +3,9 @@ title: "Agent Gym: A Framework for Continuous Evaluation and Evolution of LLM Ag
 subtitle: "Ghiasnezhad Omran et al. (2026) — keeping a deployed agent in step with rules that keep moving"
 date: 2026-10-21 09:00:00 +0200
 tags: [papers]
+venue-name: "arXiv"
+venue-logo: arxiv.svg
+venue-url: "https://arxiv.org/abs/2608.15591"
 ---
 
 **Authors:** Pouya Ghiasnezhad Omran, Michael Zimmermann, Duncan Cambridge,

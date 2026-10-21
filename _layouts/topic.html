@@ -16,6 +16,7 @@ layout: page
   <li class="post-preview">
     <article>
       <div class="post-preview-text">
+        {% include post-venue.html post=post %}
         <a href="{{ post.url | absolute_url }}">
           <h2 class="post-title">{{ post.title | strip_html }}</h2>
           {%- if post.subtitle %}

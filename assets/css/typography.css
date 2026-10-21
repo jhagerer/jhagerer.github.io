@@ -592,6 +592,44 @@ footer a {
 
 .feed-subscribe .fa-rss { margin-right: 0.45rem; }
 
+/* The venue line above an entry's heading: the publishing body's mark and
+ * its name, set quietly so it reads as a label rather than a second title.
+ * The mark is sized from the line's own font-size, so the two stay in step. */
+.post-venue {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  opacity: 0.65;
+}
+
+[role="main"] .post-venue a {
+  color: inherit;
+  text-decoration: none;
+}
+
+[role="main"] .post-venue a:hover,
+[role="main"] .post-venue a:focus-visible {
+  color: var(--bj-link);
+  text-decoration: underline;
+}
+
+.venue-logo,
+.venue-logo svg,
+img.venue-logo {
+  display: block;
+  height: 1.05em;
+  width: auto;
+}
+
+/* An inlined one-colour mark follows the line's colour; one with its own
+ * brand colour keeps it. */
+.venue-logo-arxiv { color: var(--bj-text); }
+
 /* --- Larger screens -------------------------------------------------------
  *
  * The sizes above are the small-screen ones. A phone column is roughly half

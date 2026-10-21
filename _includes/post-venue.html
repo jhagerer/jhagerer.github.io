@@ -1,0 +1,34 @@
+{%- comment -%}
+  The venue line above a listing entry's heading: the publishing body's mark
+  and its name.
+
+  Parameters:
+    post — the post to read the front matter from
+
+  Front matter:
+    venue-name  the organisation, written out
+    venue-logo  optional. A bare *.svg is inlined from _includes/venues/, so
+                that a one-colour mark can take the page's text colour; any
+                other name is an image under /assets/img/venues/. An entry
+                without one shows the name alone, which is what happens when
+                a publisher's mark cannot be obtained.
+    venue-url   optional link for the name
+{%- endcomment -%}
+{%- assign post = include.post -%}
+{%- if post.venue-name -%}
+<p class="post-venue">
+  {%- if post.venue-logo -%}
+    {%- if post.venue-logo contains '.svg' -%}
+      {%- capture venue_logo_path %}venues/{{ post.venue-logo }}{% endcapture -%}
+      <span class="venue-logo venue-logo-{{ post.venue-logo | split: '.' | first }}" aria-hidden="true">{% include {{ venue_logo_path }} %}</span>
+    {%- else -%}
+      <img class="venue-logo" src="{{ post.venue-logo | prepend: '/assets/img/venues/' | relative_url }}" alt="" aria-hidden="true">
+    {%- endif -%}
+  {%- endif -%}
+  {%- if post.venue-url -%}
+    <a href="{{ post.venue-url }}">{{ post.venue-name }}</a>
+  {%- else -%}
+    <span>{{ post.venue-name }}</span>
+  {%- endif -%}
+</p>
+{%- endif -%}

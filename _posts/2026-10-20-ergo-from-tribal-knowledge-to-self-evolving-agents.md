@@ -3,6 +3,8 @@ title: "From Tribal Knowledge to Self-evolving Agents"
 subtitle: "ERGO Innovation Lab, Google Cloud & Deloitte (2026) — capturing, governing and scaling institutional knowledge in financial enterprises"
 date: 2026-10-20 09:00:00 +0200
 tags: [papers]
+venue-name: "ERGO Innovation Lab"
+venue-logo: ergo.png
 thumbnail-img: /assets/img/papers/ergo-knowledge-iceberg.jpg
 thumbnail-alt: "The knowledge iceberg: documented surface knowledge above the waterline, buried knowledge below"
 ---
