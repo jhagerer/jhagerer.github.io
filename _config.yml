@@ -72,12 +72,18 @@ defaults:
       layout: "post"
       head-extra:
         - head-theme-init.html
+        - head-feed.html
+      after-content:          # the subscribe link, without forking a layout
+        - feed-button.html
   - scope:
       path: ""
     values:
       layout: "page"
       head-extra:
         - head-theme-init.html
+        - head-feed.html
+      after-content:
+        - feed-button.html
 
 plugins:
   - jekyll-remote-theme

@@ -1,0 +1,12 @@
+---
+layout: null
+permalink: /concepts/feed.xml
+sitemap: false
+---
+{%- comment -%}
+  Jekyll's include tag rejects a bracket index in a parameter, so the posts
+  are picked out first and passed as a plain variable.
+{%- endcomment -%}
+{%- assign feed_posts = site.tags['nlp-and-data-concepts'] -%}
+{%- capture feed_title %}{{ site.title }} — Concepts{% endcapture -%}
+{% include feed-body.html posts=feed_posts title=feed_title url='/concepts/feed.xml' %}

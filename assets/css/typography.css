@@ -495,7 +495,7 @@ input, textarea, select {
 .post-preview .post-image:hover {
   flex: 0 0 auto;
   float: none;
-  width: 7rem;
+  width: 8.5rem;
   height: auto;          /* the theme fixes a square; a figure keeps its shape */
   margin: 0.4rem 0 0;
   filter: none;
@@ -515,7 +515,7 @@ input, textarea, select {
  * below the date instead. At this size the float still fits beside the title,
  * and keeping it there keeps the entries a uniform shape. */
 @media (max-width: 500px) {
-  .post-preview .post-image { display: block; width: 5rem; }
+  .post-preview .post-image { display: block; width: 6rem; }
   .post-preview .post-image-small { display: none; }
 }
 
@@ -564,6 +564,33 @@ footer a {
   font-size: 0.85rem;
   opacity: 0.68;
 }
+
+/* The subscribe link closing a page. Quiet: it is an offer, not a call to
+ * action, so it sits at the size of the meta line and keeps its distance
+ * from the last entry. */
+.feed-subscribe {
+  margin: 2.2rem 0 0;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--bj-rule);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+}
+
+/* [role="main"] p a underlines links in reading text and outranks a bare
+ * .feed-subscribe a, so this matches its specificity. */
+[role="main"] .feed-subscribe a {
+  color: var(--bj-text);
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+[role="main"] .feed-subscribe a:hover,
+[role="main"] .feed-subscribe a:focus-visible {
+  opacity: 1;
+  color: var(--bj-link);
+}
+
+.feed-subscribe .fa-rss { margin-right: 0.45rem; }
 
 /* --- Larger screens -------------------------------------------------------
  *

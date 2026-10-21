@@ -1,0 +1,16 @@
+{%- comment -%}
+  The subscribe link under the content, wired up by `after-content` in the
+  site defaults so that it reaches every page and post without a layout fork.
+
+  A page that sets `feed-url` offers its own section's feed; everything else
+  offers the site feed. `feed-title` names what is being subscribed to.
+{%- endcomment -%}
+{%- assign feed_url = page.feed-url | default: '/feed.xml' -%}
+{%- assign feed_label = page.feed-title | default: 'every new article' -%}
+
+<p class="feed-subscribe">
+  <a href="{{ feed_url | relative_url }}" rel="alternate" type="application/rss+xml">
+    <i class="fas fa-rss" aria-hidden="true"></i>
+    <span>Subscribe by RSS to {{ feed_label }}</span>
+  </a>
+</p>

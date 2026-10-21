@@ -1,0 +1,10 @@
+{%- comment -%}
+  Feed discovery for a section page, so that a reader's browser or reader
+  offers this section's feed rather than only the site-wide one. The theme's
+  head already carries the <link> for /feed.xml.
+{%- endcomment -%}
+{%- if page.feed-url -%}
+<link rel="alternate" type="application/rss+xml"
+      title="{{ page.feed-title | default: page.title | xml_escape }}"
+      href="{{ page.feed-url | absolute_url }}">
+{%- endif -%}
