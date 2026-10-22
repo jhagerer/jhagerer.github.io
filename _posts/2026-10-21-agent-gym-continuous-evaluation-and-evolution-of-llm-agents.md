@@ -1,6 +1,6 @@
 ---
 title: "Agent Gym: A Framework for Continuous Evaluation and Evolution of LLM Agents Through Human-in-the-Loop Feedback"
-subtitle: "Ghiasnezhad Omran et al. (2026) — keeping a deployed agent in step with rules that keep moving"
+subtitle: "Ghiasnezhad Omran et al. (2026) — the static agent dilemma: agent behaviour is fixed at deployment while business rules change"
 date: 2026-10-21 09:00:00 +0200
 tags: [papers]
 venue-name: "arXiv"
