@@ -655,6 +655,41 @@ img.venue-logo-profile {
   margin-bottom: 0.7rem;
 }
 
+/* An entry's tags, under its summary. Small, quiet and wrapping, so a row of
+ * four reads as a footnote to the card rather than as a second navigation. */
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.55rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-tags li { margin: 0; }
+
+[role="main"] .post-tags a {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  padding: 0.28em 0.6em;
+  border: 1px solid var(--bj-rule);
+  border-radius: 999px;
+  color: var(--bj-text);
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+[role="main"] .post-tags a:hover,
+[role="main"] .post-tags a:focus-visible {
+  opacity: 1;
+  color: var(--bj-link);
+  border-color: currentColor;
+  text-decoration: none;
+}
+
 /* --- Larger screens -------------------------------------------------------
  *
  * The sizes above are the small-screen ones. A phone column is roughly half

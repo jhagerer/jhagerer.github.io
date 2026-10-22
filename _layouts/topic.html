@@ -23,6 +23,7 @@ layout: page
           <h3 class="post-subtitle">{{ post.subtitle | strip_html }}</h3>
           {%- endif %}
         </a>
+        {% include post-tags.html post=post %}
         <p class="post-meta">{{ post.date | date: site.date_format }}</p>
       </div>
       {%- if post.thumbnail-img %}

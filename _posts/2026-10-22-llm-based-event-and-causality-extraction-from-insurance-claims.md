@@ -2,11 +2,9 @@
 title: "LLM-Based Event and Causality Extraction from Insurance Claims"
 subtitle: "Master's thesis in Informatics, Technical University of Munich (TUM), in cooperation with Inverso GmbH, October 2026"
 date: 2026-10-22 11:00:00 +0200
-tags: [projects]
+tags: [projects, technical-university-of-munich, thesis-topic]
 venue-name: "Johann Hagerer & TUM"
-venue-logo:
-  - profile.jpg
-  - tum.svg
+venue-logo: profile.jpg
 ---
 
 ## Motivation

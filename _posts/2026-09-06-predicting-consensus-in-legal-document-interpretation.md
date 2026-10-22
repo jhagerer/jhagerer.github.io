@@ -2,7 +2,7 @@
 title: "Predicting consensus in legal document interpretation"
 subtitle: "Waldon, Brodsky, Ma & Degen (2023) — false consensus bias in contract reading, and whether an LLM can predict it"
 date: 2026-09-06 10:00:00 +0200
-tags: [papers]
+tags: [papers, peer-reviewed, conference-publication]
 venue-name: "Cognitive Science Society"
 thumbnail-img: /assets/img/papers/waldon-false-consensus.png
 thumbnail-alt: "Scatter plot of estimated agreement against actual agreement, with most points above the diagonal"

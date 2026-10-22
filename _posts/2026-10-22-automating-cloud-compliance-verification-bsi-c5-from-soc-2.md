@@ -2,9 +2,9 @@
 title: "Automating Cloud Compliance Verification"
 subtitle: "Automating Cloud Compliance Verification: Benchmarking LLM Workflows and Agentic Systems for BSI C5 Criteria Mapping from SOC 2 Type II Audit Reports"
 date: 2026-10-22 09:00:00 +0200
-tags: [projects]
-venue-name: "Hochschule München & Johann Hagerer"
-venue-logo: hm.png
+tags: [projects, university-of-applied-sciences-munich, thesis-topic]
+venue-name: "Johann Hagerer & Hochschule München"
+venue-logo: profile.jpg
 ---
 
 **Academic supervisor:** Prof. Fabian Spanhel, Hochschule München

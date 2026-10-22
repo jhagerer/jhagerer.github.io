@@ -54,6 +54,8 @@ layout: page
         {% endif %}
       </a>
 
+      {% include post-tags.html post=post %}
+
       <p class="post-meta">
         {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
         {{ post.date | date: date_format }}
