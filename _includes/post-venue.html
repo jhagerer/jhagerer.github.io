@@ -7,7 +7,8 @@
 
   Front matter:
     venue-name  the organisation, written out
-    venue-logo  optional. A bare *.svg is inlined from _includes/venues/, so
+    venue-logo  optional, one name or a list of them. A bare *.svg is inlined
+                from _includes/venues/, so
                 that a one-colour mark can take the page's text colour; any
                 other name is an image under /assets/img/venues/. An entry
                 without one shows the name alone, which is what happens when
@@ -16,15 +17,26 @@
 {%- endcomment -%}
 {%- assign post = include.post -%}
 {%- if post.venue-name -%}
+{%- comment -%}
+  venue-logo takes one name or a list of them. A string has no `first` in
+  Liquid and a list does, which is what tells the two apart.
+{%- endcomment -%}
+{%- if post.venue-logo.first -%}
+  {%- assign venue_logos = post.venue-logo -%}
+{%- elsif post.venue-logo -%}
+  {%- assign venue_logos = post.venue-logo | split: '|' -%}
+{%- else -%}
+  {%- assign venue_logos = '' | split: '|' -%}
+{%- endif -%}
 <p class="post-venue">
-  {%- if post.venue-logo -%}
-    {%- if post.venue-logo contains '.svg' -%}
-      {%- capture venue_logo_path %}venues/{{ post.venue-logo }}{% endcapture -%}
-      <span class="venue-logo venue-logo-{{ post.venue-logo | split: '.' | first }}" aria-hidden="true">{% include {{ venue_logo_path }} %}</span>
+  {%- for logo in venue_logos -%}
+    {%- if logo contains '.svg' -%}
+      {%- capture venue_logo_path %}venues/{{ logo }}{% endcapture -%}
+      <span class="venue-logo venue-logo-{{ logo | split: '.' | first }}" aria-hidden="true">{% include {{ venue_logo_path }} %}</span>
     {%- else -%}
-      <img class="venue-logo venue-logo-{{ post.venue-logo | split: '.' | first }}" src="{{ post.venue-logo | prepend: '/assets/img/venues/' | relative_url }}" alt="" aria-hidden="true">
+      <img class="venue-logo venue-logo-{{ logo | split: '.' | first }}" src="{{ logo | prepend: '/assets/img/venues/' | relative_url }}" alt="" aria-hidden="true">
     {%- endif -%}
-  {%- endif -%}
+  {%- endfor -%}
   {%- if post.venue-url -%}
     <a href="{{ post.venue-url }}">{{ post.venue-name }}</a>
   {%- else -%}
