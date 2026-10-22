@@ -4,7 +4,9 @@ subtitle: "Master's thesis at TU Darmstadt, in cooperation with Inverso GmbH, Se
 date: 2026-10-22 13:00:00 +0200
 tags: [projects, technical-university-of-darmstadt, thesis-topic]
 venue-name: "Johann Hagerer & TU Darmstadt"
-venue-logo: profile.jpg
+venue-logo:
+  - profile.jpg
+  - tuda.png
 ---
 
 **Industry supervisor:** Dr. Gerhard Johann Hagerer, Inverso GmbH
