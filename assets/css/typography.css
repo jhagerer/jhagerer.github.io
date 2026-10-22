@@ -655,30 +655,38 @@ img.venue-logo-profile {
   margin-bottom: 0.7rem;
 }
 
-/* An entry's tags, under its summary. Small, quiet and wrapping, so a row of
- * four reads as a footnote to the card rather than as a second navigation. */
+/* An entry's tags, closing the card under the date. They stay on one line:
+ * a tag like technical-university-of-munich is long enough that wrapping
+ * turned the row into a stack, so the row scrolls sideways instead, the way
+ * the tab row above does, and a tag never breaks across lines. */
 .post-tags {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin: 0.55rem 0 0;
+  flex-wrap: nowrap;
+  gap: 0.3rem;
+  margin: 0.5rem 0 0;
   padding: 0;
   list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
-.post-tags li { margin: 0; }
+.post-tags::-webkit-scrollbar { display: none; }
+
+.post-tags li { margin: 0; flex: 0 0 auto; }
 
 [role="main"] .post-tags a {
   display: block;
+  white-space: nowrap;
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
-  padding: 0.28em 0.6em;
-  border: 1px solid var(--bj-rule);
+  font-size: 0.6875rem;
+  line-height: 1.25;
+  letter-spacing: 0.005em;
+  padding: 0.3em 0.7em;
+  border: 0;
   border-radius: 999px;
+  background-color: var(--bj-chip);
   color: var(--bj-text);
-  opacity: 0.6;
+  opacity: 0.72;
   text-decoration: none;
 }
 
@@ -686,7 +694,6 @@ img.venue-logo-profile {
 [role="main"] .post-tags a:focus-visible {
   opacity: 1;
   color: var(--bj-link);
-  border-color: currentColor;
   text-decoration: none;
 }
 

@@ -29,6 +29,7 @@
   --light-elevated: #FFFFFF;
   --light-stripe: #F8F8F8;
   --light-box-note: #EEEEEE;
+  --light-chip: #EDEEF0;
   --light-box-warning: #FDF5D4;
   --light-selection-bg: #B9DCFF;
   --light-selection-fg: #10131A;
@@ -51,6 +52,7 @@
   --dark-elevated: #1E2128;
   --dark-stripe: #232833;
   --dark-box-note: #232833;
+  --dark-chip: #262B35;
   --dark-box-warning: #3A3320;
   --dark-selection-bg: #2F5680;
   --dark-selection-fg: #F2F5F9;
@@ -74,6 +76,7 @@
   --bj-elevated: var(--light-elevated);
   --bj-stripe: var(--light-stripe);
   --bj-box-note: var(--light-box-note);
+  --bj-chip: var(--light-chip);
   --bj-box-warning: var(--light-box-warning);
   --bj-selection-bg: var(--light-selection-bg);
   --bj-selection-fg: var(--light-selection-fg);
@@ -102,6 +105,7 @@
     --bj-elevated: var(--dark-elevated);
     --bj-stripe: var(--dark-stripe);
     --bj-box-note: var(--dark-box-note);
+    --bj-chip: var(--dark-chip);
     --bj-box-warning: var(--dark-box-warning);
     --bj-selection-bg: var(--dark-selection-bg);
     --bj-selection-fg: var(--dark-selection-fg);
@@ -130,6 +134,7 @@
   --bj-elevated: var(--dark-elevated);
   --bj-stripe: var(--dark-stripe);
   --bj-box-note: var(--dark-box-note);
+  --bj-chip: var(--dark-chip);
   --bj-box-warning: var(--dark-box-warning);
   --bj-selection-bg: var(--dark-selection-bg);
   --bj-selection-fg: var(--dark-selection-fg);
