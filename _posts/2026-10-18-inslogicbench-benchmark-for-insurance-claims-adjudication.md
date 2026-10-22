@@ -1,6 +1,6 @@
 ---
 title: "InsLogicBench: An Argumentation Logic Grounded Benchmark for Complex Insurance Claims Adjudication"
-subtitle: "Liu et al. (2026) — whether a model can justify an insurance decision, not just arrive at one"
+subtitle: "Liu et al. (2026) — each case carries a reasoning trace from the facts through the policy clauses to the verdict"
 date: 2026-10-18 09:00:00 +0200
 tags: [papers, peer-reviewed, conference-publication]
 venue-name: "Association for Computational Linguistics"
