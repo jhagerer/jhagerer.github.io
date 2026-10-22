@@ -1,6 +1,6 @@
 ---
-title: "Automating Cloud Compliance Verification: Benchmarking LLM Workflows and Agentic Systems for BSI C5 Criteria Mapping from SOC 2 Type II Audit Reports"
-subtitle: "Master thesis topic at Hochschule München — does agentic complexity pay for itself on a real compliance task?"
+title: "Automating Cloud Compliance Verification"
+subtitle: "Automating Cloud Compliance Verification: Benchmarking LLM Workflows and Agentic Systems for BSI C5 Criteria Mapping from SOC 2 Type II Audit Reports"
 date: 2026-10-22 09:00:00 +0200
 tags: [projects]
 venue-name: "Hochschule München & Johann Hagerer"
