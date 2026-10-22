@@ -4,7 +4,9 @@ subtitle: "TUM NLP Lab Course, winter term 2026/27 — topic definition for my s
 date: 2026-10-21 14:00:00 +0200
 tags: [projects, technical-university-of-munich, practical-course-topic]
 venue-name: "Johann Hagerer & TUM"
-venue-logo: profile.jpg
+venue-logo:
+  - profile.jpg
+  - tum.svg
 ---
 
 | Field | Value |
