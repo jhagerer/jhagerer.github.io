@@ -1,17 +1,13 @@
 ---
 title: "Trustworthy Correspondence Based Extraction for Automated Claims Creation"
-subtitle: "Mia Johanna Nona Zech, TU Darmstadt, in cooperation with Inverso GmbH, September 2026"
+subtitle: "Master's thesis at TU Darmstadt, in cooperation with Inverso GmbH, September 2026"
 date: 2026-10-22 13:00:00 +0200
 tags: [projects, technical-university-of-darmstadt, thesis-topic]
 venue-name: "Johann Hagerer & TU Darmstadt"
 venue-logo: profile.jpg
 ---
 
-**Author:** Mia Johanna Nona Zech
-
-**Supervisor (TU Darmstadt):** Dr. Miriam Gräf
-
-**Supervisor (Inverso):** Dr. Gerhard Johann Hagerer
+**Industry supervisor:** Dr. Gerhard Johann Hagerer, Inverso GmbH
 
 **Date:** September 2026
 
