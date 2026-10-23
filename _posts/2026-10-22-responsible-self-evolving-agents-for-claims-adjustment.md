@@ -4,9 +4,7 @@ subtitle: "Governed Self-Evolution: Design Principles for Responsible Self-Evolv
 date: 2026-10-22 15:00:00 +0200
 tags: [projects, technical-university-of-munich, practical-course-topic]
 venue-name: "Johann Hagerer & TUM"
-venue-logo:
-  - profile.jpg
-  - tum.svg
+venue-logo: profile.jpg
 ---
 
 **Type:** Guided research topic, Technical University of Munich
