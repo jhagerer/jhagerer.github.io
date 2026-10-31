@@ -13,24 +13,21 @@ the same architecture without noticing they agree. The table below is the set of
 I use, each with the paper I take it from, so that a design discussion can start from
 shared words.
 
-One idea runs through all of them. Classical retrieval-augmented generation embeds the
-chunks and searches their content. The methods collected here instead treat a corpus
-as a structure to be navigated: folder paths, document names and headings carry
-meaning, and an agent can move through them, scope a search to a branch, and go back
-when a branch turns out to be unhelpful. Finding the right section and then reading it
-in order is a different operation from retrieving the top *k* passages, and most of
-these terms exist to name parts of that difference.
+The methods collected here treat a corpus as a structure to be navigated: folder
+paths, document names and headings carry meaning, and an agent can move through
+them, scope a search to a branch, and go back when a branch turns out to be
+unhelpful. Finding the right section and then reading it in order is a different
+operation from retrieving the top *k* passages, and most of these terms exist to
+name parts of that difference.
 
 The terms assume one particular design, which is worth stating because it decides
 what several of them mean: only the meaning-carrying metadata is embedded — path,
 document name, headings — while the chunks themselves are stored but not embedded, and
-there are no summary nodes and no table-of-contents nodes. Under a different design,
-"metadata embedding" and "tree traversal" would refer to something else.
+there are no summary nodes and no table-of-contents nodes.
 
-It should be useful if you are building a retrieval system over a structured corpus and
-want to name its parts precisely, if you are reading across these papers and keep
-meeting the same concept under new labels, or if you are settling terminology with a
-team before an architecture discussion rather than during one.
+It should be useful if you are building a retrieval system over a structured corpus
+and want to name its parts precisely, or if you are settling terminology with a team
+before an architecture discussion.
 
 ## Terminology
 
@@ -52,7 +49,3 @@ team before an architecture discussion rather than during one.
 | **Corpus-discriminative vocabulary** | Terms that exist in the corpus and separate relevant documents from distractors | [SIRA](https://arxiv.org/abs/2605.06647) |
 | **Locate-then-read / section reading** | First find the right section, then read its stored text in order | [DeepRead](https://arxiv.org/abs/2602.05014) |
 | **Backtracking** | Going back from a branch that was not useful | [Corpus2Skill](https://arxiv.org/abs/2604.14572) |
-
-<small>One entry carries no paper: <em>facets</em> is a long-established term from
-information retrieval, where faceted search predates this literature, and I cite no
-specific source for it.</small>
